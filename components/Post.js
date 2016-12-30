@@ -7,7 +7,7 @@ export default class Post extends Component {
     };
 
     render() {
-        const text = require('../posts/test.md');
+        const text = require('../posts/Жалпы/test.md');
         return (
             <Markdown text={text} />
         )

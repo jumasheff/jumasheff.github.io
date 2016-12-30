@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import getPostsFilenames from '../helpers/getPostsFilenames';
-import getPostsTitles from '../helpers/getPostsTitles';
+import getPosts from '../helpers/getPosts';
 
 function Home() {
   const reactLink = 'https://github.com/facebook/react';
@@ -26,19 +25,18 @@ function Home() {
         instructions on how to use this boilerplate
         to deploy your own single page app using GitHub Pages.
       </p>
-        <p>
-            Posts written so far:
+        <span>
+            Materials we have:
             {
-                getPostsFilenames().map(p => <p>{p}</p>)
+                getPosts().map(p => (
+                    <div>
+                        <div>{p.category}</div>
+                        <div>{p.title}</div>
+                        <div>{p.filename}</div>
+                    </div>))
             }
 
-        </p>
-        <p>
-            Posts titles:
-            {
-                getPostsTitles(getPostsFilenames()).map(t => <p>{t}</p>)
-            }
-        </p>
+        </span>
       <div><Link to="/post">Sample post</Link></div>
       <div><Link to="/example">Example page</Link></div>
       <div><Link to="/example/two-deep?field1=foo&field2=bar#boom!">
