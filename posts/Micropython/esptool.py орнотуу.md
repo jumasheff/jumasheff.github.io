@@ -31,8 +31,7 @@ sudo apt-get install python
 ~~~bash
 pip --version
 ~~~
-
-Деп терминалдан буйрук берип, *pip'тин* версиясын билип алабыз:
+деп терминалдан буйрук берип, *pip'тин* версиясын билип алабыз:
 ~~~bash
 pip 9.0.1 from /home/murat/.local/lib/python2.7/site-packages (python 2.7)
 ~~~
@@ -42,7 +41,7 @@ pip 9.0.1 from /home/murat/.local/lib/python2.7/site-packages (python 2.7)
 The program 'pip' is currently not installed. To run 'pip' please ask your administrator to install the package 'python-pip'
 ~~~
 
-Орнотуш үчүн кийинкини теребиз:
+Бул программа бизге керек, андыктан аны орнотобуз (албетте, сизде жок болсо):
 ~~~bash
 sudo apt-get install python-pip
 ~~~
@@ -52,12 +51,7 @@ sudo apt-get install python-pip
 sudo pip install esptool
 ~~~
 
-`esptool.py`ду чакырыш үчүн мындай тересиз:
-~~~bash
-esptool.py параметр
-~~~
-
-Жеткиликтүү параметрлеринин тизмегин алыш үчүн кийинкини териңиз:
+Эми `esptool.py`ду колдоно берсек болот. Мисалы, жеткиликтүү параметрлеринин тизмегин алыш үчүн кийинкини териңиз:
 ~~~bash
 esptool.py -h
 ~~~
