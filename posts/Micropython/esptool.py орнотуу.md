@@ -56,3 +56,8 @@ sudo pip install esptool
 ~~~bash
 esptool.py параметр
 ~~~
+
+Жеткиликтүү параметрлеринин тизмегин алыш үчүн кийинкини териңиз:
+~~~bash
+esptool.py -h
+~~~
