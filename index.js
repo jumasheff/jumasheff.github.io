@@ -18,8 +18,7 @@ const routes = (
         <Route path="example" mapMenuTitle="Example" component={ExampleComponent}>
           <Route path="two-deep" mapMenuTitle="Two Deep" component={ExampleTwoDeepComponent} />
         </Route>
-        <Route path="sample-post" mapMenuTitle="Sample post" component={Post} />
-        <Route path="post/:category/:" mapMenuTitle="Post" component={PageNotFound} />
+        <Route path="posts/:category/:slug" component={Post} />
 
         <Route path="*" mapMenuTitle="Page Not Found" component={PageNotFound} />
     </Route>
