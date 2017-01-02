@@ -50,6 +50,11 @@ a:visited {
   color: #babf7a;
 }
 
+
+.go-home a {
+  color: #FFF8ED;
+}
+
 .main {
   left: 0;
   right: 0;
