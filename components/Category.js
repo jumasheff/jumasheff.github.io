@@ -8,7 +8,7 @@ export default class Category extends Component {
   renderPostLink(p) {
     return (
         <div key={p.slugifiedUrl}>
-          <Link to={`/posts/${p.slugifiedCaterory}/${p.slugifiedUrl}`}>{p.title}</Link>
+          <Link to={`/posts/${p.slugifiedCategory}/${p.slugifiedUrl}`}>{p.title}</Link>
         </div>
     )
   }
