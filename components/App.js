@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import getPosts from '../helpers/getPosts';
 
 const propTypes = {
   children: PropTypes.element.isRequired,
@@ -29,21 +30,27 @@ function App({ children, routes }) {
     );
   }
 
-  const repoLink = 'https://github.com/rafrex/spa-github-pages';
+  function generatePostsUrls() {
+    const postsObjects = getPosts();
+    return (
+        postsObjects.map(p => (
+          <div key={p.slugifiedUrl}>
+            <Link to={`/posts/${p.slugifiedCaterory}/${p.slugifiedUrl}`}>{p.title}</Link>
+          </div>
+        ))
+      )
+  }
 
   return (
     <div>
       <h1>Single Page Apps for GitHub Pages</h1>
-      <a href={repoLink}>https://github.com/rafrex/spa-github-pages</a>
-      <nav>
-        {generateMapMenu()}
-      </nav>
+        <nav>
+          {generatePostsUrls()}
+        </nav>
+        <nav>
+          {generateMapMenu()}
+        </nav>
       {children}
-      <div style={{ color: '#A0A0A0', fontSize: '14px', marginTop: '50px' }}>
-        <a href="http://www.rafaelpedicini.com" className="extended-link">
-          Code and concept by <span className="link-style">Rafael Pedicini</span>
-        </a>
-      </div>
     </div>
   );
 }

@@ -25,19 +25,7 @@ function Home() {
         instructions on how to use this boilerplate
         to deploy your own single page app using GitHub Pages.
       </p>
-        <span>
-            Materials we have:
-            {
-                getPosts().map(p => (
-                    <div>
-                        <div>{p.category}</div>
-                        <div>{p.title}</div>
-                        <div>{p.filename}</div>
-                    </div>))
-            }
-
-        </span>
-      <div><Link to="/sample-post">Sample post</Link></div>
+      <div><Link to="/posts/zhalpy/test">Sample post</Link></div>
       <div><Link to="/example">Example page</Link></div>
       <div><Link to="/example/two-deep?field1=foo&field2=bar#boom!">
         Example two deep with query and hash
