@@ -35,7 +35,7 @@ function App({ children, routes }) {
     return (
         postsObjects.map(p => (
           <div key={p.slugifiedUrl}>
-            <Link to={`/posts/${p.slugifiedCaterory}/${p.slugifiedUrl}`}>{p.title}</Link>
+            <Link to={`/posts/${p.slugifiedCategory}/${p.slugifiedUrl}`}>{p.title}</Link>
           </div>
         ))
       )
@@ -43,14 +43,16 @@ function App({ children, routes }) {
 
   return (
     <div>
-      <h1>Single Page Apps for GitHub Pages</h1>
-        <nav>
-          {generatePostsUrls()}
-        </nav>
+      <div className="main">
+        <h1>Single Page Apps for GitHub Pages</h1>
         <nav>
           {generateMapMenu()}
         </nav>
-      {children}
+        {children}
+      </div>
+      <nav className="floating-menu">
+        {generatePostsUrls()}
+      </nav>
     </div>
   );
 }
