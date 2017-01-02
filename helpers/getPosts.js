@@ -1,3 +1,4 @@
+import urlSlug from './urlSlug';
 
 function getPosts() {
     const req = require.context("../posts", true, /^\.\/.*\.md$/);
@@ -8,7 +9,8 @@ function getPosts() {
         const filename = spl.slice(-1).pop();
         const category = spl.slice(1)[0];
         const title = filename.split('.md')[0];
-        return { filename, category, title }
+        const slug = urlSlug(title);
+        return { filename, category, title, slug }
     })
 }
 
