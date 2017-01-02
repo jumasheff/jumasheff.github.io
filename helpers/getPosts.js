@@ -9,8 +9,9 @@ function getPosts() {
         const filename = spl.slice(-1).pop();
         const category = spl.slice(1)[0];
         const title = filename.split('.md')[0];
-        const slug = urlSlug(title);
-        return { filename, category, title, slug }
+        const slugifiedCaterory = urlSlug(category);
+        const slugifiedUrl = urlSlug(title);
+        return { filename, category, title, slugifiedCaterory, slugifiedUrl }
     })
 }
 
