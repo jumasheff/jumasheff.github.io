@@ -48,7 +48,9 @@ function App({ children, routes }) {
   return (
     <div>
       <div className="main">
-        <h1>Single Page Apps for GitHub Pages</h1>
+        <h1 className="go-home">
+          <Link to="/">Чар жайыт блог</Link>
+        </h1>
         <nav>
           {generateMapMenu()}
         </nav>
