@@ -9,6 +9,7 @@ import PageNotFound from './components/PageNotFound';
 import ExampleComponent from './components/ExampleComponent';
 import ExampleTwoDeepComponent from './components/ExampleTwoDeepComponent';
 import Post from './components/Post';
+import Category from './components/Category';
 
 
 const routes = (
@@ -19,6 +20,7 @@ const routes = (
           <Route path="two-deep" mapMenuTitle="Two Deep" component={ExampleTwoDeepComponent} />
         </Route>
         <Route path="posts/:category/:slug" component={Post} />
+        <Route path="categories/:category" component={Category} />
 
         <Route path="*" mapMenuTitle="Page Not Found" component={PageNotFound} />
     </Route>
