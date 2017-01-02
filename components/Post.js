@@ -1,13 +1,15 @@
 import React, { PropTypes, Component } from 'react';
+import { find, propEq } from 'ramda';
 import Markdown from 'react-mark';
+import getPosts from '../helpers/getPosts';
 
 export default class Post extends Component {
-    static propTypes = {
-        id: PropTypes.string.isRequired
-    };
 
     render() {
-        const text = require('../posts/Жалпы/test.md');
+        const posts = getPosts();
+        const { category, slug } = this.props.params;
+        const postObj = find(propEq('slugifiedUrl', slug))(posts);
+        const text = require(`../posts/${postObj.category}/${postObj.filename}`);
         return (
             <Markdown text={text} />
         )
