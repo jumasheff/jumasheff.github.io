@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { map, path, uniq } from 'ramda';
 import getPosts from '../helpers/getPosts';
+import urlSlug from '../helpers/urlSlug';
 
 const propTypes = {
   children: PropTypes.element.isRequired,
@@ -30,13 +32,15 @@ function App({ children, routes }) {
     );
   }
 
-  function generatePostsUrls() {
-    const postsObjects = getPosts();
+  function generateCategoriesUrls() {
+    const posts = getPosts();
+    const val =(o) => path(['category'], o);
+    const categories = uniq(map(val, posts));
     return (
-        postsObjects.map(p => (
-          <div key={p.slugifiedUrl}>
-            <Link to={`/posts/${p.slugifiedCategory}/${p.slugifiedUrl}`}>{p.title}</Link>
-          </div>
+        categories.map(c => (
+            <div key={urlSlug(c)}>
+              <Link to={`/categories/${urlSlug(c)}/`}>{c}</Link>
+            </div>
         ))
       )
   }
@@ -51,7 +55,8 @@ function App({ children, routes }) {
         {children}
       </div>
       <nav className="floating-menu">
-        {generatePostsUrls()}
+        <h2>Категориялар</h2>
+        {generateCategoriesUrls()}
       </nav>
     </div>
   );
