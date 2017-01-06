@@ -39859,7 +39859,7 @@
 	      null,
 	      _react2.default.createElement(
 	        _reactRouter.Link,
-	        { to: '/categories/jalpy' },
+	        { to: '/categories/kategoriyasyz' },
 	        'Sample category'
 	      )
 	    ),

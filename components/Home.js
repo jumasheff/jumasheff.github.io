@@ -14,7 +14,7 @@ function Home() {
       </p>
       <p>Төмөнкүлөр бул жерде жөн эле турат :)</p>
       <div><Link to="/posts/zhalpy/test">Sample post</Link></div>
-      <div><Link to="/categories/jalpy">Sample category</Link></div>
+      <div><Link to="/categories/kategoriyasyz">Sample category</Link></div>
       <div><Link to="/example">Example page</Link></div>
       <div><Link to="/example/two-deep?field1=foo&field2=bar#boom!">
         Example two deep with query and hash
