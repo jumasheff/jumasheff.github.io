@@ -3,7 +3,8 @@
   "version": "0.2.0",
   "description": "Чар жайыт блог",
   "scripts": {
-    "start": "webpack -d --watch & live-server --entry-file=404.html"
+    "start": "webpack -d --watch & live-server --entry-file=404.html",
+    "build": "node tools/getCreationDates.js & webpack"
   },
   "repository": {
     "type": "git",
