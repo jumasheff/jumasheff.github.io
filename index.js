@@ -13,7 +13,7 @@ import Category from './components/Category';
 
 
 const routes = (
-    <Route path="/" mapMenuTitle="Башкы" component={App}>
+    <Route path="/" mapMenuTitle="Башкы бет" component={App}>
         <IndexRoute component={Home} />
 
         <Route path="example" mapMenuTitle="Example" component={ExampleComponent}>
