@@ -90,3 +90,12 @@ a:visited {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+.post-date-and-category {
+  padding-top: 15px;
+  color: #a6a6a6;
+}
+
+.post-date-and-category > a {
+  color: #a6a6a6;
+}
