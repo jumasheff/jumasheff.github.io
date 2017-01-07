@@ -12,6 +12,7 @@ export default {
     loaders: [
         { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
         { test: /\.md$/, exclude: /node_modules/, loader: 'raw-loader' },
+        { test: /\.json$/, exclude: /node_modules/, loader: 'json-loader' },
     ],
   },
   resolve: {
