@@ -80,7 +80,7 @@
 
 	var _Post2 = _interopRequireDefault(_Post);
 
-	var _Category = __webpack_require__(618);
+	var _Category = __webpack_require__(619);
 
 	var _Category2 = _interopRequireDefault(_Category);
 
@@ -88,7 +88,7 @@
 
 	var routes = _react2.default.createElement(
 	  _reactRouter.Route,
-	  { path: '/', mapMenuTitle: '\u0411\u0430\u0448\u043A\u044B', component: _App2.default },
+	  { path: '/', mapMenuTitle: '\u0411\u0430\u0448\u043A\u044B \u0431\u0435\u0442', component: _App2.default },
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 	  _react2.default.createElement(
 	    _reactRouter.Route,
@@ -40093,7 +40093,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -40101,6 +40101,8 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(178);
 
 	var _ramda = __webpack_require__(252);
 
@@ -40112,6 +40114,10 @@
 
 	var _getPosts2 = _interopRequireDefault(_getPosts);
 
+	var _posts_dates = __webpack_require__(617);
+
+	var _posts_dates2 = _interopRequireDefault(_posts_dates);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40121,29 +40127,52 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Post = function (_Component) {
-	    _inherits(Post, _Component);
+	  _inherits(Post, _Component);
 
-	    function Post() {
-	        _classCallCheck(this, Post);
+	  function Post() {
+	    _classCallCheck(this, Post);
 
-	        return _possibleConstructorReturn(this, (Post.__proto__ || Object.getPrototypeOf(Post)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (Post.__proto__ || Object.getPrototypeOf(Post)).apply(this, arguments));
+	  }
+
+	  _createClass(Post, [{
+	    key: 'render',
+	    value: function render() {
+	      var posts = (0, _getPosts2.default)();
+	      var _props$params = this.props.params,
+	          category = _props$params.category,
+	          slug = _props$params.slug;
+
+	      var postObj = (0, _ramda.find)((0, _ramda.propEq)('slugifiedUrl', slug))(posts);
+	      var text = __webpack_require__(618)("./" + postObj.category + '/' + postObj.filename);
+	      var postDate = _posts_dates2.default[postObj.filename];
+	      var dateObject = new Date(postDate);
+	      var formattedDate = dateObject.getFullYear() + '.' + (dateObject.getMonth() + 1) + '.' + dateObject.getDate();
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'post-date-and-category' },
+	          _react2.default.createElement(
+	            'time',
+	            { dateTime: postDate },
+	            formattedDate
+	          ),
+	          ' /',
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/categories/' + postObj.slugifiedCategory + '/' },
+	            ' ',
+	            postObj.category
+	          )
+	        ),
+	        _react2.default.createElement(_reactMark2.default, { text: text })
+	      );
 	    }
+	  }]);
 
-	    _createClass(Post, [{
-	        key: 'render',
-	        value: function render() {
-	            var posts = (0, _getPosts2.default)();
-	            var _props$params = this.props.params,
-	                category = _props$params.category,
-	                slug = _props$params.slug;
-
-	            var postObj = (0, _ramda.find)((0, _ramda.propEq)('slugifiedUrl', slug))(posts);
-	            var text = __webpack_require__(617)("./" + postObj.category + '/' + postObj.filename);
-	            return _react2.default.createElement(_reactMark2.default, { text: text });
-	        }
-	    }]);
-
-	    return Post;
+	  return Post;
 	}(_react.Component);
 
 	exports.default = Post;
@@ -45685,6 +45714,22 @@
 
 /***/ },
 /* 617 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		"Refund policy.md": "2017-01-03T02:45:08+06:00",
+		"esptool.py орнотуу.md": "2016-12-31T00:50:00+06:00",
+		"Micropython'ду компиляциялоо.md": "2017-01-02T12:25:34+06:00",
+		"Micropython'ду NodeMCU'га орнотуу.md": "2016-12-31T00:50:00+06:00",
+		"COM-портту ишке дайындоо.md": "2016-12-31T12:38:53+06:00",
+		"Өлө кызыктуу файл.md": "2016-12-30T01:55:07+06:00",
+		"test.md": "2016-12-30T00:48:58+06:00",
+		"third.md": "2016-12-30T01:55:07+06:00",
+		"second.md": "2016-12-30T01:55:07+06:00"
+	};
+
+/***/ },
+/* 618 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
@@ -45709,11 +45754,11 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 617;
+	webpackContext.id = 618;
 
 
 /***/ },
-/* 618 */
+/* 619 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
