@@ -99,3 +99,10 @@ a:visited {
 .post-date-and-category > a {
   color: #a6a6a6;
 }
+
+@media only screen and (max-width: 1023px) {
+  .floating-menu {
+    display: none;
+  }
+
+}
