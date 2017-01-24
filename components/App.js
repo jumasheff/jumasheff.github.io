@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { map, path, uniq } from 'ramda';
+import {Grid, Col, Row} from 'react-flexbox-grid/lib';
+
 import getPosts from '../helpers/getPosts';
 import urlSlug from '../helpers/urlSlug';
 
@@ -46,21 +48,25 @@ function App({ children, routes }) {
   }
 
   return (
-    <div>
-      <div className="main">
-        <h1 className="go-home">
-          <Link to="/">Чар жайыт блог</Link>
-        </h1>
-        <nav>
-          {generateMapMenu()}
-        </nav>
-        {children}
-      </div>
-      <nav className="floating-menu">
-        <h2>Категориялар</h2>
-        {generateCategoriesUrls()}
-      </nav>
-    </div>
+    <Grid>
+      <Row>
+        <Col xs={0} sm={0} md={4} lg={2}>
+          <nav className="floating-menu">
+            <h2>Категориялар</h2>
+            {generateCategoriesUrls()}
+          </nav>
+        </Col>
+        <Col xs={12} sm={12} md={8} lg={10}>
+          <h1 className="go-home">
+            <Link to="/">Чар жайыт блог</Link>
+          </h1>
+          <nav>
+            {generateMapMenu()}
+          </nav>
+          {children}
+        </Col>
+      </Row>
+    </Grid>
   );
 }
 
