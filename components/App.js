@@ -47,6 +47,14 @@ function App({ children, routes }) {
       )
   }
 
+  function mobileMenu() {
+    return (
+        <div id="mobile-menu">
+          {generateCategoriesUrls()}
+        </div>
+    )
+  }
+
   return (
     <Grid>
       <Row>
@@ -57,9 +65,14 @@ function App({ children, routes }) {
           </nav>
         </Col>
         <Col xs={12} sm={12} md={8} lg={10}>
-          <h1 className="go-home">
-            <Link to="/">Чар жайыт блог</Link>
-          </h1>
+          <header>
+            <nav id="mobile-menu-container">
+              {mobileMenu()}
+            </nav>
+            <h1 className="go-home">
+              <Link to="/">Чар жайыт блог</Link>
+            </h1>
+          </header>
           <nav>
             {generateMapMenu()}
           </nav>

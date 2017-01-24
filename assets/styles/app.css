@@ -100,9 +100,27 @@ a:visited {
   color: #a6a6a6;
 }
 
+#mobile-menu-container {
+  display: none;
+  background: #FFF8ED;
+  padding: 15px 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 20%;
+  height: 50vh;
+}
+
+#mobile-menu-container a {
+  color: #000000;
+}
+
 @media only screen and (max-width: 1023px) {
   .floating-menu {
     display: none;
   }
-
+  #mobile-menu-container {
+    display: block;
+    text-align: right;
+  }
 }
