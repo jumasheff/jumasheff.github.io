@@ -1,6 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
 body {
+  margin: 0;
   font-family: "Roboto", "Arial", sans-serif;
   color: #FFF8ED;
 }
@@ -22,7 +23,6 @@ html {
 
 body {
   line-height: 1.5;
-  padding: 1em 1em;
 }
 
 h2 {
@@ -113,6 +113,23 @@ a:visited {
 
 #mobile-menu-container a {
   color: #000000;
+}
+
+.mobile-menu-icon {
+  width: 31px;
+  height: 31px;
+}
+
+.hamburgerContainer {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 31px;
+}
+
+#mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 @media only screen and (max-width: 1023px) {

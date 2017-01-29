@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { map, path, uniq } from 'ramda';
 import {Grid, Col, Row} from 'react-flexbox-grid/lib';
 
+import Header from './Header';
 import getPosts from '../helpers/getPosts';
 import urlSlug from '../helpers/urlSlug';
 
@@ -48,41 +49,28 @@ export default class App extends Component {
       )
   }
 
-  mobileMenu() {
-    return (
-        <div id="mobile-menu">
-          {this.generateCategoriesUrls()}
-        </div>
-    )
-  }
-
   render () {
     const { children } = this.props;
     return (
-        <Grid>
-          <Row>
-            <Col xs={0} sm={0} md={4} lg={2}>
-              <nav className="floating-menu">
-                <h2>Категориялар</h2>
-                {this.generateCategoriesUrls()}
-              </nav>
-            </Col>
-            <Col xs={12} sm={12} md={8} lg={10}>
-              <header>
-                <nav id="mobile-menu-container">
-                  {this.mobileMenu()}
+        <div>
+          <Header generateCategoriesUrls={this.generateCategoriesUrls} />
+          <Grid>
+            <Row>
+              <Col xs={0} sm={0} md={4} lg={2}>
+                <nav className="floating-menu">
+                  <h2>Категориялар</h2>
+                  {this.generateCategoriesUrls()}
                 </nav>
-                <h1 className="go-home">
-                  <Link to="/">Чар жайыт блог</Link>
-                </h1>
-              </header>
-              <nav>
-                {this.generateMapMenu()}
-              </nav>
-              {children}
-            </Col>
-          </Row>
-        </Grid>
+              </Col>
+              <Col xs={12} sm={12} md={8} lg={10}>
+                <nav>
+                  {this.generateMapMenu()}
+                </nav>
+                {children}
+              </Col>
+            </Row>
+          </Grid>
+        </div>
     );
   }
 }
