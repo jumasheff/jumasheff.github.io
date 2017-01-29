@@ -14,6 +14,7 @@ export default {
         { test: /\.md$/, exclude: /node_modules/, loader: 'raw-loader' },
         { test: /\.json$/, exclude: /node_modules/, loader: 'json-loader' },
         { test: /\.css$/, include: /flexboxgrid/, loader: 'style!css?modules' },
+        { test: /\.svg$/, exclude: /node_modules/, loader: 'raw-loader' },
     ],
   },
   resolve: {
