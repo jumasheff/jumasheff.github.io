@@ -56,13 +56,13 @@ export default class App extends Component {
           <Header generateCategoriesUrls={this.generateCategoriesUrls} />
           <Grid>
             <Row>
-              <Col xs={0} sm={0} md={4} lg={2}>
+              <Col xs={0} sm={0} md={3} lg={2}>
                 <nav className="floating-menu">
                   <h2>Категориялар</h2>
                   {this.generateCategoriesUrls()}
                 </nav>
               </Col>
-              <Col xs={12} sm={12} md={8} lg={10}>
+              <Col xsOffset={1} xs={11} smOffset={1} sm={11} mdOffset={0} md={9} lgOffset={0} lg={10}>
                 <nav>
                   {this.generateMapMenu()}
                 </nav>

@@ -17,7 +17,7 @@ export default class Post extends Component {
       const dateObject = new Date(postDate);
       const formattedDate = dateObject.getFullYear() + '.' + (dateObject.getMonth() + 1) + '.' + dateObject.getDate();
       return (
-        <div>
+        <div className="post-container">
           <div className="post-date-and-category">
             <time dateTime={postDate}>{formattedDate}</time> /
             <Link to={`/categories/${postObj.slugifiedCategory}/`}> {postObj.category}</Link>
