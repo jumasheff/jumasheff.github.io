@@ -55,6 +55,7 @@ export default class Header extends Component {
           <h1 className="go-home">
             <Link to="/">Чар жайыт блог</Link>
           </h1>
+          {isShowMobileMenu && <div id="mobile-menu-overlay"> </div>}
         </header>
     )
   }
