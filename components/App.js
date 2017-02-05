@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { Link } from 'react-router';
-import { map, path, uniq } from 'ramda';
+import R from 'ramda';
 import {Grid, Col, Row} from 'react-flexbox-grid/lib';
 
 import Header from './Header';
@@ -36,10 +36,14 @@ export default class App extends Component {
     );
   }
 
-  generateCategoriesUrls() {
+  getCategories() {
     const posts = getPosts();
-    const val =(o) => path(['category'], o);
-    const categories = uniq(map(val, posts));
+    const val =(o) => R.path(['category'], o);
+    return R.uniq(R.map(val, posts));
+  }
+
+  generateCategoriesUrls() {
+    const categories = this.getCategories();
     return (
         categories.map(c => (
             <div key={urlSlug(c)}>
