@@ -1,11 +1,10 @@
-import React, { PropTypes, Component } from 'react';
-import { Link } from 'react-router';
-import R from 'ramda';
-import {Grid, Col, Row} from 'react-flexbox-grid/lib';
+import React, { PropTypes, Component } from 'react'
+import { Link } from 'react-router'
+import {Grid, Col, Row} from 'react-flexbox-grid/lib'
 
-import Header from './Header';
-import getPosts from '../helpers/getPosts';
-import urlSlug from '../helpers/urlSlug';
+import Header from './Header'
+import getCategories from '../helpers/getCategories'
+import urlSlug from '../helpers/urlSlug'
 
 
 export default class App extends Component {
@@ -36,24 +35,8 @@ export default class App extends Component {
     );
   }
 
-  getCategoryBySlug(slug) {
-    const categories = this.getCategories()
-    let mapping = {}
-    for (let i = 0; i < categories.length; i++) {
-      const currentCategory = categories[i]
-      mapping[urlSlug(currentCategory)] = currentCategory
-    }
-    return mapping[slug]
-  }
-
-  getCategories() {
-    const posts = getPosts();
-    const val =(o) => R.path(['category'], o);
-    return R.uniq(R.map(val, posts));
-  }
-
   generateCategoriesUrls() {
-    const categories = this.getCategories();
+    const categories = getCategories();
     return (
         categories.map(c => (
             <div key={urlSlug(c)}>
