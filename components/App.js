@@ -1,9 +1,11 @@
 import React, { PropTypes, Component } from 'react'
 import { Link } from 'react-router'
 import {Grid, Col, Row} from 'react-flexbox-grid/lib'
+import R from 'ramda'
 
 import Header from './Header'
 import getCategories from '../helpers/getCategories'
+import getCategoryBySlug from '../helpers/getCategoryBySlug'
 import urlSlug from '../helpers/urlSlug'
 
 
@@ -22,6 +24,32 @@ export default class App extends Component {
         (route.path === '/' ? '' : route.path)
       );
       return path;
+    }
+
+    const { params } = this.props
+
+    const paramsKeys = Object.keys(params)
+    const hasParams = paramsKeys.length > 0
+    let elements = []
+
+    if(hasParams) {
+      const categorySlug = R.path(['category'], params)
+
+      elements.push(
+          <span key={0}>
+            <Link to={'/'}>{'Башкы бет'}</Link>
+            {' / '}
+          </span>
+      )
+
+      if(categorySlug) {
+        elements.push(
+            <span key={'category'}>
+              <Link to={`/categories/${categorySlug}/`}>{getCategoryBySlug(categorySlug)}</Link>
+            </span>
+        )
+      }
+      return elements
     }
 
     return (
