@@ -36,6 +36,16 @@ export default class App extends Component {
     );
   }
 
+  getCategoryBySlug(slug) {
+    const categories = this.getCategories()
+    let mapping = {}
+    for (let i = 0; i < categories.length; i++) {
+      const currentCategory = categories[i]
+      mapping[urlSlug(currentCategory)] = currentCategory
+    }
+    return mapping[slug]
+  }
+
   getCategories() {
     const posts = getPosts();
     const val =(o) => R.path(['category'], o);
