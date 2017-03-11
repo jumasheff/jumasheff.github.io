@@ -27,18 +27,20 @@ export default class Posts extends Component {
   renderPosts = (posts) => (
     posts.map((p, ind) => {
       const text = require(`../posts/${p.category}/${p.filename}`);
-      return (
-        <PostText
-          key={'post'+ind}
-          short={this.props.short}
-          postDate={p.postDate}
-          formattedDate={this.formatDate(p.postDate)}
-          slugifiedCategory={p.slugifiedCategory}
-          category={p.category}
-          text={text}
-          url={p.slugifiedUrl}
-        />
-      )
+      if(text[0] !== '$') {
+        return (
+          <PostText
+            key={'post'+ind}
+            short={this.props.short}
+            postDate={p.postDate}
+            formattedDate={this.formatDate(p.postDate)}
+            slugifiedCategory={p.slugifiedCategory}
+            category={p.category}
+            text={text}
+            url={p.slugifiedUrl}
+          />
+        )
+      }
     })
   )
 

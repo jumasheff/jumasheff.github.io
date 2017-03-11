@@ -1,1 +1,1 @@
-# Third test file
+$# Third test file

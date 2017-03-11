@@ -1,4 +1,4 @@
-# React Mark
+$# React Mark
 
 Configurable Markdown Components in React. Make your own components to do custom things like to:
 
