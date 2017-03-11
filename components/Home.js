@@ -5,7 +5,8 @@ function Home() {
   const repoReadmeLink = 'https://github.com/rafrex/spa-github-pages#readme';
   return (
     <div>
-      <Posts />
+      <h1>Соңку макалалар</h1>
+      <Posts short />
       <p>
         Бул долбоор GitHub Pages'те орнотулган жана <a href={repoReadmeLink}>бул </a>
         калыптын негизинде кураштырылган.

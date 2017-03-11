@@ -96,6 +96,15 @@ a:visited {
   background: transparent;
 }
 
+.post-container-short {
+  padding-bottom: 20px;
+  border-bottom: 1px dashed;
+}
+
+.post-container {
+  padding-bottom: 20px;
+}
+
 .post-container > div:nth-of-type(2) {
   width: 75vw;
 }

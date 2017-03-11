@@ -4,6 +4,9 @@ import PostText from './PostText'
 import postsDates from '../data/posts_dates.json';
 
 export default class Posts extends Component {
+  static propTypes = {
+    short: PropTypes.bool.isRequired
+  }
 
   formatDate = (d) => {
     const dateObject = new Date(d);
@@ -17,11 +20,13 @@ export default class Posts extends Component {
       return (
         <PostText
           key={'post'+ind}
+          short={this.props.short}
           postDate={postDate}
           formattedDate={this.formatDate(postDate)}
           slugifiedCategory={p.slugifiedCategory}
           category={p.category}
           text={text}
+          url={p.slugifiedUrl}
         />
       )
     })
