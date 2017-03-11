@@ -4,7 +4,8 @@ import Markdown from 'react-mark'
 
 const PostText = ({ short, postDate, formattedDate, slugifiedCategory, category, text, url }) => {
   const link = <Link to={`/posts/${slugifiedCategory}/${url}`}>уландысын бул жерден окусаңыз болот</Link>
-  const textToRender = short ? text.substring(0, 300) + ' ...' : text
+  let textToRender = short ? text.substring(0, 300) + ' ...' : text
+  textToRender = textToRender[0] === '$' ? textToRender.substring(1, textToRender.length) : textToRender
   const containerClassName = short ? "post-container-short" : "post-container"
   return (
     <div className={containerClassName}>
