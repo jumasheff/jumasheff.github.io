@@ -47,7 +47,7 @@ export default class Posts extends Component {
     const byDate = R.descend(R.prop('postDate'))
     const sortedPosts = R.sort(byDate, posts)
     return (
-      <div>{this.renderPosts(sortedPosts)}</div>
+      <section>{this.renderPosts(sortedPosts)}</section>
     )
   }
 }
