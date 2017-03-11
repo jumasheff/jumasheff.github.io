@@ -24,8 +24,8 @@ export default class Posts extends Component {
     return newPosts
   }
 
-  renderPosts = () => (
-    this.postsWithDate().map((p, ind) => {
+  renderPosts = (posts) => (
+    posts.map((p, ind) => {
       const text = require(`../posts/${p.category}/${p.filename}`);
       return (
         <PostText
@@ -43,8 +43,11 @@ export default class Posts extends Component {
   )
 
   render() {
+    const posts = this.postsWithDate()
+    const byDate = R.descend(R.prop('postDate'))
+    const sortedPosts = R.sort(byDate, posts)
     return (
-      <div>{this.renderPosts()}</div>
+      <div>{this.renderPosts(sortedPosts)}</div>
     )
   }
 }
