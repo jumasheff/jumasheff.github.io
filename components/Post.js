@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react';
-import { Link } from 'react-router';
 import { find, propEq } from 'ramda';
-import Markdown from 'react-mark';
+import PostText from './PostText';
 import getPosts from '../helpers/getPosts';
 
 import postsDates from '../data/posts_dates.json';
@@ -17,13 +16,13 @@ export default class Post extends Component {
       const dateObject = new Date(postDate);
       const formattedDate = dateObject.getFullYear() + '.' + (dateObject.getMonth() + 1) + '.' + dateObject.getDate();
       return (
-        <div className="post-container">
-          <div className="post-date-and-category">
-            <time dateTime={postDate}>{formattedDate}</time> /
-            <Link to={`/categories/${postObj.slugifiedCategory}/`}> {postObj.category}</Link>
-          </div>
-          <Markdown text={text} />
-        </div>
+          <PostText
+            postDate={postDate}
+            formattedDate={formattedDate}
+            slugifiedCategory={postObj.slugifiedCategory}
+            category={postObj.category}
+            text={text}
+          />
       )
   }
 }
