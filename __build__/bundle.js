@@ -64,23 +64,23 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _PageNotFound = __webpack_require__(590);
+	var _PageNotFound = __webpack_require__(634);
 
 	var _PageNotFound2 = _interopRequireDefault(_PageNotFound);
 
-	var _ExampleComponent = __webpack_require__(591);
+	var _ExampleComponent = __webpack_require__(635);
 
 	var _ExampleComponent2 = _interopRequireDefault(_ExampleComponent);
 
-	var _ExampleTwoDeepComponent = __webpack_require__(592);
+	var _ExampleTwoDeepComponent = __webpack_require__(636);
 
 	var _ExampleTwoDeepComponent2 = _interopRequireDefault(_ExampleTwoDeepComponent);
 
-	var _Post = __webpack_require__(593);
+	var _Post = __webpack_require__(637);
 
 	var _Post2 = _interopRequireDefault(_Post);
 
-	var _Category = __webpack_require__(636);
+	var _Category = __webpack_require__(638);
 
 	var _Category2 = _interopRequireDefault(_Category);
 
@@ -40990,31 +40990,31 @@
 /* 583 */
 /***/ function(module, exports) {
 
-	module.exports = "# Refund policy\n\nSee relevant terms and conditions in the contract we have signed."
+	module.exports = "$# Refund policy\n\nSee relevant terms and conditions in the contract we have signed."
 
 /***/ },
 /* 584 */
 /***/ function(module, exports) {
 
-	module.exports = "# Second"
+	module.exports = "$# Second"
 
 /***/ },
 /* 585 */
 /***/ function(module, exports) {
 
-	module.exports = "# React Mark\n\nConfigurable Markdown Components in React. Make your own components to do custom things like to:\n\n> - Add line numbers and syntax highlighting to <pre> tags.\n- Transform absolute and relative link paths on <a> tags.\n- Add anchor links to all <h1> and <h2> tags.\n\n## Install\n\n```bash\nnpm install react-mark --save\n```\n\n## Usage\n\n```js\nimport React from 'react';\nimport Markdown from 'react-mark';\n\nclass Component extends React.Component {\n  render() {\n    return <Markdown text=\"# React Mark\"/>;\n  }\n}\n\nclass OtherComponent extends React.Component {\n  render() {\n    return <Markdown># React Mark</Markdown>;\n  }\n}\n```\n\n## Default components\n\nBy default, `react-mark` outputs all the standard markdown elements listed below:\n\n- Headers (<h1> ... <h6>)\n- Font Styles (<strong>, <em>, <del>)\n- Lists (<ul>, <ol>, <li>)\n- Links (<a>)\n- Images (<img>)\n- Blockquotes (<blockquote>)\n- Hrs (<hr>)\n- Code (<code>, <pre>)\n\nYou can take a look at the basic react components for each element [here](https://github.com/casesandberg/react-mark/tree/master/src/components/basic).\n\n## Custom Components\n\n`react-mark`'s real power is the ability to swap out any of the components above for custom components. Say you want codeblocks to have line numbers:\n\n```js\n// NumberCode.js\nimport React from 'react';\n\nexport class NumberCode extends React.Component {\n  render() {\n    var code = this.props.children[0];\n    return (\n      <div className=\"code\">\n        { code.split('\\n').map((lineText, i) => {\n          return (\n            <div is=\"line\" key={ i }>\n              <div is=\"number\">{ i + 1 }</div>\n              <pre is=\"text\">{ lineText }</pre>\n            </div>\n          );\n        }) }\n      </div>\n    );\n  }\n}\n\nexport default NumberCode;\n```\n\nThen, we can use it in place of the default code `pre` component:\n\n```js\nimport React from 'react';\nimport Markdown from 'react-mark';\n\nimport NumberCode from './NumberCode'\n\nexport class Component extends React.Component {\n  render() {\n    return (\n      <Markdown replace={{ pre: NumberCode }}>\n        import React from 'react';\n        import Markdown from 'react-mark';\n      </Markdown>\n    );\n  }\n}\n\nexport default Component;\n```\n\nTo wrap markdown with a custom component, pass an object down via the `replace` prop with the element name as the key (in this case `pre`) and the component as the value.\n\n## props\n\n### text, children\nType: `string`\n\nThe Markdown to be rendered in React components.\n\n### replace\nType: `obj`\n\nTo wrap markdown with a custom component, pass an object down with the element name as the key and the component as the value. Tag names include: `a` `blockquote` `code` `del` `em` `header` `hr` `img` `li` `list` `p` `pre` `ref` `span` `strong` `ul`"
+	module.exports = "$# React Mark\n\nConfigurable Markdown Components in React. Make your own components to do custom things like to:\n\n> - Add line numbers and syntax highlighting to <pre> tags.\n- Transform absolute and relative link paths on <a> tags.\n- Add anchor links to all <h1> and <h2> tags.\n\n## Install\n\n```bash\nnpm install react-mark --save\n```\n\n## Usage\n\n```js\nimport React from 'react';\nimport Markdown from 'react-mark';\n\nclass Component extends React.Component {\n  render() {\n    return <Markdown text=\"# React Mark\"/>;\n  }\n}\n\nclass OtherComponent extends React.Component {\n  render() {\n    return <Markdown># React Mark</Markdown>;\n  }\n}\n```\n\n## Default components\n\nBy default, `react-mark` outputs all the standard markdown elements listed below:\n\n- Headers (<h1> ... <h6>)\n- Font Styles (<strong>, <em>, <del>)\n- Lists (<ul>, <ol>, <li>)\n- Links (<a>)\n- Images (<img>)\n- Blockquotes (<blockquote>)\n- Hrs (<hr>)\n- Code (<code>, <pre>)\n\nYou can take a look at the basic react components for each element [here](https://github.com/casesandberg/react-mark/tree/master/src/components/basic).\n\n## Custom Components\n\n`react-mark`'s real power is the ability to swap out any of the components above for custom components. Say you want codeblocks to have line numbers:\n\n```js\n// NumberCode.js\nimport React from 'react';\n\nexport class NumberCode extends React.Component {\n  render() {\n    var code = this.props.children[0];\n    return (\n      <div className=\"code\">\n        { code.split('\\n').map((lineText, i) => {\n          return (\n            <div is=\"line\" key={ i }>\n              <div is=\"number\">{ i + 1 }</div>\n              <pre is=\"text\">{ lineText }</pre>\n            </div>\n          );\n        }) }\n      </div>\n    );\n  }\n}\n\nexport default NumberCode;\n```\n\nThen, we can use it in place of the default code `pre` component:\n\n```js\nimport React from 'react';\nimport Markdown from 'react-mark';\n\nimport NumberCode from './NumberCode'\n\nexport class Component extends React.Component {\n  render() {\n    return (\n      <Markdown replace={{ pre: NumberCode }}>\n        import React from 'react';\n        import Markdown from 'react-mark';\n      </Markdown>\n    );\n  }\n}\n\nexport default Component;\n```\n\nTo wrap markdown with a custom component, pass an object down via the `replace` prop with the element name as the key (in this case `pre`) and the component as the value.\n\n## props\n\n### text, children\nType: `string`\n\nThe Markdown to be rendered in React components.\n\n### replace\nType: `obj`\n\nTo wrap markdown with a custom component, pass an object down with the element name as the key and the component as the value. Tag names include: `a` `blockquote` `code` `del` `em` `header` `hr` `img` `li` `list` `p` `pre` `ref` `span` `strong` `ul`"
 
 /***/ },
 /* 586 */
 /***/ function(module, exports) {
 
-	module.exports = "# Third test file"
+	module.exports = "$# Third test file"
 
 /***/ },
 /* 587 */
 /***/ function(module, exports) {
 
-	module.exports = "# Үүүүүхүүүүү!!!"
+	module.exports = "$# Үүүүүхүүүүү!!!"
 
 /***/ },
 /* 588 */
@@ -41062,7 +41062,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(178);
+	var _Posts = __webpack_require__(590);
+
+	var _Posts2 = _interopRequireDefault(_Posts);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41072,10 +41074,11 @@
 	    'div',
 	    null,
 	    _react2.default.createElement(
-	      'p',
+	      'h1',
 	      null,
-	      '\u0421\u0430\u0439\u0442\u0442\u0430 \u043A\u0443\u0440\u0443\u043B\u0443\u0448 \u0438\u0448\u0442\u0435\u0440\u0438 \u0436\u04AF\u0440\u0433\u04AF\u0437\u04AF\u043B\u04AF\u04AF\u0434\u04E9.'
+	      '\u0421\u043E\u04A3\u043A\u0443 \u043C\u0430\u043A\u0430\u043B\u0430\u043B\u0430\u0440'
 	    ),
+	    _react2.default.createElement(_Posts2.default, { short: true }),
 	    _react2.default.createElement(
 	      'p',
 	      null,
@@ -41086,47 +41089,6 @@
 	        '\u0431\u0443\u043B '
 	      ),
 	      '\u043A\u0430\u043B\u044B\u043F\u0442\u044B\u043D \u043D\u0435\u0433\u0438\u0437\u0438\u043D\u0434\u0435 \u043A\u0443\u0440\u0430\u0448\u0442\u044B\u0440\u044B\u043B\u0433\u0430\u043D.'
-	    ),
-	    _react2.default.createElement(
-	      'p',
-	      null,
-	      '\u0422\u04E9\u043C\u04E9\u043D\u043A\u04AF\u043B\u04E9\u0440 \u0431\u0443\u043B \u0436\u0435\u0440\u0434\u0435 \u0436\u04E9\u043D \u044D\u043B\u0435 \u0442\u0443\u0440\u0430\u0442 :)'
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/posts/zhalpy/test' },
-	        'Sample post'
-	      )
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/categories/kategoriyasyz' },
-	        'Sample category'
-	      )
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/example' },
-	        'Example page'
-	      )
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/example/two-deep?field1=foo&field2=bar#boom!' },
-	        'Example two deep with query and hash'
-	      )
 	    )
 	  );
 	}
@@ -41143,35 +41105,101 @@
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _ramda = __webpack_require__(262);
+
+	var _ramda2 = _interopRequireDefault(_ramda);
+
+	var _getPosts = __webpack_require__(576);
+
+	var _getPosts2 = _interopRequireDefault(_getPosts);
+
+	var _PostText = __webpack_require__(591);
+
+	var _PostText2 = _interopRequireDefault(_PostText);
+
+	var _posts_dates = __webpack_require__(632);
+
+	var _posts_dates2 = _interopRequireDefault(_posts_dates);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var propTypes = {
-	  location: _react.PropTypes.object.isRequired
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Posts = function (_Component) {
+	  _inherits(Posts, _Component);
+
+	  function Posts() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, Posts);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Posts.__proto__ || Object.getPrototypeOf(Posts)).call.apply(_ref, [this].concat(args))), _this), _this.formatDate = function (d) {
+	      var dateObject = new Date(d);
+	      return dateObject.getFullYear() + '.' + (dateObject.getMonth() + 1) + '.' + dateObject.getDate();
+	    }, _this.postsWithDate = function () {
+	      var posts = (0, _getPosts2.default)();
+	      var newPosts = [];
+	      posts.forEach(function (p) {
+	        var post = Object.assign({}, p, { postDate: _posts_dates2.default[p.filename] });
+	        newPosts.push(post);
+	      });
+	      return newPosts;
+	    }, _this.renderPosts = function (posts) {
+	      return posts.map(function (p, ind) {
+	        var text = __webpack_require__(633)("./" + p.category + '/' + p.filename);
+	        if (text[0] !== '$') {
+	          return _react2.default.createElement(_PostText2.default, {
+	            key: 'post' + ind,
+	            short: _this.props.short,
+	            postDate: p.postDate,
+	            formattedDate: _this.formatDate(p.postDate),
+	            slugifiedCategory: p.slugifiedCategory,
+	            category: p.category,
+	            text: text,
+	            url: p.slugifiedUrl
+	          });
+	        }
+	      });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(Posts, [{
+	    key: 'render',
+	    value: function render() {
+	      var posts = this.postsWithDate();
+	      var byDate = _ramda2.default.descend(_ramda2.default.prop('postDate'));
+	      var sortedPosts = _ramda2.default.sort(byDate, posts);
+	      return _react2.default.createElement(
+	        'section',
+	        null,
+	        this.renderPosts(sortedPosts)
+	      );
+	    }
+	  }]);
+
+	  return Posts;
+	}(_react.Component);
+
+	Posts.propTypes = {
+	  short: _react.PropTypes.bool.isRequired
 	};
-
-	function PageNotFound(_ref) {
-	  var location = _ref.location;
-
-	  return _react2.default.createElement(
-	    'p',
-	    null,
-	    'Page not found - the path, ',
-	    _react2.default.createElement(
-	      'code',
-	      null,
-	      location.pathname
-	    ),
-	    ', did not match any React Router routes.'
-	  );
-	}
-
-	PageNotFound.propTypes = propTypes;
-
-	exports.default = PageNotFound;
+	exports.default = Posts;
 
 /***/ },
 /* 591 */
@@ -41189,38 +41217,63 @@
 
 	var _reactRouter = __webpack_require__(178);
 
+	var _reactMark = __webpack_require__(592);
+
+	var _reactMark2 = _interopRequireDefault(_reactMark);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var propTypes = {
-	  children: _react.PropTypes.element
-	};
+	var PostText = function PostText(_ref) {
+	  var short = _ref.short,
+	      postDate = _ref.postDate,
+	      formattedDate = _ref.formattedDate,
+	      slugifiedCategory = _ref.slugifiedCategory,
+	      category = _ref.category,
+	      text = _ref.text,
+	      url = _ref.url;
 
-	function ExampleComponent(_ref) {
-	  var children = _ref.children;
-
+	  var link = _react2.default.createElement(
+	    _reactRouter.Link,
+	    { to: '/posts/' + slugifiedCategory + '/' + url },
+	    '\u0443\u043B\u0430\u043D\u0434\u044B\u0441\u044B\u043D \u0431\u0443\u043B \u0436\u0435\u0440\u0434\u0435\u043D \u043E\u043A\u0443\u0441\u0430\u04A3\u044B\u0437 \u0431\u043E\u043B\u043E\u0442'
+	  );
+	  var textToRender = short ? text.substring(0, 300) + ' ...' : text;
+	  textToRender = textToRender[0] === '$' ? textToRender.substring(1, textToRender.length) : textToRender;
+	  var containerClassName = short ? "post-container-short" : "post-container";
 	  return _react2.default.createElement(
 	    'div',
-	    null,
+	    { className: containerClassName },
 	    _react2.default.createElement(
-	      'p',
-	      null,
-	      'This is an example page. Refresh the page or copy/paste the url to test out the redirect functionality (this same page should load after the redirect).'
-	    ),
-	    children || _react2.default.createElement(
 	      'div',
-	      null,
+	      { className: 'post-date-and-category' },
+	      _react2.default.createElement(
+	        'time',
+	        { dateTime: postDate },
+	        formattedDate
+	      ),
+	      ' /',
 	      _react2.default.createElement(
 	        _reactRouter.Link,
-	        { to: '/example/two-deep?field1=foo&field2=bar#boom!' },
-	        'Example two deep with query and hash'
+	        { to: '/categories/' + slugifiedCategory + '/' },
+	        ' ',
+	        category
 	      )
-	    )
+	    ),
+	    _react2.default.createElement(_reactMark2.default, { text: textToRender }),
+	    short && link
 	  );
-	}
+	};
 
-	ExampleComponent.propTypes = propTypes;
+	PostText.propTypes = {
+	  postDate: _react.PropTypes.string,
+	  formattedDate: _react.PropTypes.string,
+	  slugifiedCategory: _react.PropTypes.string,
+	  category: _react.PropTypes.string,
+	  text: _react.PropTypes.string,
+	  url: _react.PropTypes.string
+	};
 
-	exports.default = ExampleComponent;
+	exports.default = PostText;
 
 /***/ },
 /* 592 */
@@ -41232,209 +41285,7 @@
 	  value: true
 	});
 
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(178);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var propTypes = {
-	  location: _react.PropTypes.object.isRequired
-	};
-
-	function ExampleTwoDeepComponent(_ref) {
-	  var location = _ref.location;
-
-	  var queryPresent = Object.keys(location.query).length !== 0;
-	  var hashPresent = location.hash !== '';
-
-	  function queryStringTitle() {
-	    if (queryPresent) return 'The query string field-value pairs are:';
-	    return 'No query string in the url';
-	  }
-
-	  function hashFragmentTitle() {
-	    if (hashPresent) return 'The hash fragment is:';
-	    return 'No hash fragment in the url';
-	  }
-
-	  function linkToShowQueryAndOrHash() {
-	    if (queryPresent && hashPresent) return null;
-
-	    var queryString = queryPresent ? location.search : '?field1=foo&field2=bar';
-	    var hashFragment = hashPresent ? location.hash : '#boom!';
-
-	    var linkText = '';
-	    if (queryPresent && !hashPresent) linkText = 'Show with hash fragment';
-	    if (!queryPresent && hashPresent) linkText = 'Show with query string';
-	    if (!queryPresent && !hashPresent) linkText = 'Show with query string and hash fragment';
-
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        _reactRouter.Link,
-	        { to: '/example/two-deep' + queryString + hashFragment },
-	        linkText
-	      )
-	    );
-	  }
-
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'div',
-	        null,
-	        queryStringTitle()
-	      ),
-	      _react2.default.createElement(
-	        'ul',
-	        null,
-	        Object.keys(location.query).map(function (field, index) {
-	          return _react2.default.createElement(
-	            'li',
-	            { key: index },
-	            field,
-	            ': ',
-	            location.query[field]
-	          );
-	        })
-	      )
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'div',
-	        null,
-	        hashFragmentTitle()
-	      ),
-	      _react2.default.createElement(
-	        'ul',
-	        null,
-	        hashPresent ? _react2.default.createElement(
-	          'li',
-	          null,
-	          location.hash.slice(1)
-	        ) : undefined
-	      )
-	    ),
-	    linkToShowQueryAndOrHash()
-	  );
-	}
-
-	ExampleTwoDeepComponent.propTypes = propTypes;
-
-	exports.default = ExampleTwoDeepComponent;
-
-/***/ },
-/* 593 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(178);
-
-	var _ramda = __webpack_require__(262);
-
-	var _reactMark = __webpack_require__(594);
-
-	var _reactMark2 = _interopRequireDefault(_reactMark);
-
-	var _getPosts = __webpack_require__(576);
-
-	var _getPosts2 = _interopRequireDefault(_getPosts);
-
-	var _posts_dates = __webpack_require__(634);
-
-	var _posts_dates2 = _interopRequireDefault(_posts_dates);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Post = function (_Component) {
-	  _inherits(Post, _Component);
-
-	  function Post() {
-	    _classCallCheck(this, Post);
-
-	    return _possibleConstructorReturn(this, (Post.__proto__ || Object.getPrototypeOf(Post)).apply(this, arguments));
-	  }
-
-	  _createClass(Post, [{
-	    key: 'render',
-	    value: function render() {
-	      var posts = (0, _getPosts2.default)();
-	      var _props$params = this.props.params,
-	          category = _props$params.category,
-	          slug = _props$params.slug;
-
-	      var postObj = (0, _ramda.find)((0, _ramda.propEq)('slugifiedUrl', slug))(posts);
-	      var text = __webpack_require__(635)("./" + postObj.category + '/' + postObj.filename);
-	      var postDate = _posts_dates2.default[postObj.filename];
-	      var dateObject = new Date(postDate);
-	      var formattedDate = dateObject.getFullYear() + '.' + (dateObject.getMonth() + 1) + '.' + dateObject.getDate();
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'post-container' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'post-date-and-category' },
-	          _react2.default.createElement(
-	            'time',
-	            { dateTime: postDate },
-	            formattedDate
-	          ),
-	          ' /',
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: '/categories/' + postObj.slugifiedCategory + '/' },
-	            ' ',
-	            postObj.category
-	          )
-	        ),
-	        _react2.default.createElement(_reactMark2.default, { text: text })
-	      );
-	    }
-	  }]);
-
-	  return Post;
-	}(_react.Component);
-
-	exports.default = Post;
-
-/***/ },
-/* 594 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _Mark = __webpack_require__(595);
+	var _Mark = __webpack_require__(593);
 
 	var _Mark2 = _interopRequireDefault(_Mark);
 
@@ -41443,7 +41294,7 @@
 	exports.default = _Mark2.default;
 
 /***/ },
-/* 595 */
+/* 593 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41459,13 +41310,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _markdown = __webpack_require__(596);
+	var _markdown = __webpack_require__(594);
 
-	var _componentLoop = __webpack_require__(601);
+	var _componentLoop = __webpack_require__(599);
 
 	var _componentLoop2 = _interopRequireDefault(_componentLoop);
 
-	var _transformCodeBlocks = __webpack_require__(633);
+	var _transformCodeBlocks = __webpack_require__(631);
 
 	var _transformCodeBlocks2 = _interopRequireDefault(_transformCodeBlocks);
 
@@ -41508,16 +41359,16 @@
 	exports.default = Mark;
 
 /***/ },
-/* 596 */
+/* 594 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// super simple module for the most common nodejs use case.
-	exports.markdown = __webpack_require__(597);
+	exports.markdown = __webpack_require__(595);
 	exports.parse = exports.markdown.toHTML;
 
 
 /***/ },
-/* 597 */
+/* 595 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Released under MIT license
@@ -41649,7 +41500,7 @@
 
 	// node
 	function mk_block_inspect() {
-	  var util = __webpack_require__(598);
+	  var util = __webpack_require__(596);
 	  return "Markdown.mk_block( " +
 	          util.inspect(this.toString()) +
 	          ", " +
@@ -43248,7 +43099,7 @@
 
 
 /***/ },
-/* 598 */
+/* 596 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -43776,7 +43627,7 @@
 	}
 	exports.isPrimitive = isPrimitive;
 
-	exports.isBuffer = __webpack_require__(599);
+	exports.isBuffer = __webpack_require__(597);
 
 	function objectToString(o) {
 	  return Object.prototype.toString.call(o);
@@ -43820,7 +43671,7 @@
 	 *     prototype.
 	 * @param {function} superCtor Constructor function to inherit prototype from.
 	 */
-	exports.inherits = __webpack_require__(600);
+	exports.inherits = __webpack_require__(598);
 
 	exports._extend = function(origin, add) {
 	  // Don't do anything if add isn't an object
@@ -43841,7 +43692,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(3)))
 
 /***/ },
-/* 599 */
+/* 597 */
 /***/ function(module, exports) {
 
 	module.exports = function isBuffer(arg) {
@@ -43852,7 +43703,7 @@
 	}
 
 /***/ },
-/* 600 */
+/* 598 */
 /***/ function(module, exports) {
 
 	if (typeof Object.create === 'function') {
@@ -43881,7 +43732,7 @@
 
 
 /***/ },
-/* 601 */
+/* 599 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43895,11 +43746,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _underscore = __webpack_require__(602);
+	var _underscore = __webpack_require__(600);
 
 	var _underscore2 = _interopRequireDefault(_underscore);
 
-	var _findComponent = __webpack_require__(603);
+	var _findComponent = __webpack_require__(601);
 
 	var _findComponent2 = _interopRequireDefault(_findComponent);
 
@@ -43932,7 +43783,7 @@
 	exports.default = componentLoop;
 
 /***/ },
-/* 602 */
+/* 600 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscore.js 1.8.3
@@ -45486,7 +45337,7 @@
 
 
 /***/ },
-/* 603 */
+/* 601 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45500,7 +45351,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(604);
+	var _index = __webpack_require__(602);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45554,7 +45405,7 @@
 	exports.default = findComponent;
 
 /***/ },
-/* 604 */
+/* 602 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45564,75 +45415,75 @@
 	});
 	exports.OL = exports.UL = exports.STRONG = exports.SPAN = exports.REF = exports.P = exports.MARKDOWN = exports.LIST = exports.LI = exports.INLINECODE = exports.IMG = exports.HR = exports.H = exports.EM = exports.DEL = exports.CODEBLOCK = exports.BLOCKQUOTE = exports.A = undefined;
 
-	var _A = __webpack_require__(605);
+	var _A = __webpack_require__(603);
 
 	var _A2 = _interopRequireDefault(_A);
 
-	var _Blockquote = __webpack_require__(606);
+	var _Blockquote = __webpack_require__(604);
 
 	var _Blockquote2 = _interopRequireDefault(_Blockquote);
 
-	var _CodeBlock = __webpack_require__(607);
+	var _CodeBlock = __webpack_require__(605);
 
 	var _CodeBlock2 = _interopRequireDefault(_CodeBlock);
 
-	var _Del = __webpack_require__(608);
+	var _Del = __webpack_require__(606);
 
 	var _Del2 = _interopRequireDefault(_Del);
 
-	var _Em = __webpack_require__(609);
+	var _Em = __webpack_require__(607);
 
 	var _Em2 = _interopRequireDefault(_Em);
 
-	var _H = __webpack_require__(610);
+	var _H = __webpack_require__(608);
 
 	var _H2 = _interopRequireDefault(_H);
 
-	var _Hr = __webpack_require__(611);
+	var _Hr = __webpack_require__(609);
 
 	var _Hr2 = _interopRequireDefault(_Hr);
 
-	var _Img = __webpack_require__(612);
+	var _Img = __webpack_require__(610);
 
 	var _Img2 = _interopRequireDefault(_Img);
 
-	var _InlineCode = __webpack_require__(613);
+	var _InlineCode = __webpack_require__(611);
 
 	var _InlineCode2 = _interopRequireDefault(_InlineCode);
 
-	var _Li = __webpack_require__(614);
+	var _Li = __webpack_require__(612);
 
 	var _Li2 = _interopRequireDefault(_Li);
 
-	var _List = __webpack_require__(615);
+	var _List = __webpack_require__(613);
 
 	var _List2 = _interopRequireDefault(_List);
 
-	var _Markdown = __webpack_require__(616);
+	var _Markdown = __webpack_require__(614);
 
 	var _Markdown2 = _interopRequireDefault(_Markdown);
 
-	var _P = __webpack_require__(627);
+	var _P = __webpack_require__(625);
 
 	var _P2 = _interopRequireDefault(_P);
 
-	var _Ref = __webpack_require__(628);
+	var _Ref = __webpack_require__(626);
 
 	var _Ref2 = _interopRequireDefault(_Ref);
 
-	var _Span = __webpack_require__(629);
+	var _Span = __webpack_require__(627);
 
 	var _Span2 = _interopRequireDefault(_Span);
 
-	var _Strong = __webpack_require__(630);
+	var _Strong = __webpack_require__(628);
 
 	var _Strong2 = _interopRequireDefault(_Strong);
 
-	var _Ul = __webpack_require__(631);
+	var _Ul = __webpack_require__(629);
 
 	var _Ul2 = _interopRequireDefault(_Ul);
 
-	var _Ol = __webpack_require__(632);
+	var _Ol = __webpack_require__(630);
 
 	var _Ol2 = _interopRequireDefault(_Ol);
 
@@ -45658,7 +45509,7 @@
 	exports.OL = _Ol2.default;
 
 /***/ },
-/* 605 */
+/* 603 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45708,7 +45559,7 @@
 	exports.default = A;
 
 /***/ },
-/* 606 */
+/* 604 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45758,7 +45609,7 @@
 	exports.default = BLOCKQUOTE;
 
 /***/ },
-/* 607 */
+/* 605 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45812,7 +45663,7 @@
 	exports.default = CODEBLOCK;
 
 /***/ },
-/* 608 */
+/* 606 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45862,7 +45713,7 @@
 	exports.default = DEL;
 
 /***/ },
-/* 609 */
+/* 607 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45912,7 +45763,7 @@
 	exports.default = EM;
 
 /***/ },
-/* 610 */
+/* 608 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45958,7 +45809,7 @@
 	exports.default = H;
 
 /***/ },
-/* 611 */
+/* 609 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46004,7 +45855,7 @@
 	exports.default = HR;
 
 /***/ },
-/* 612 */
+/* 610 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46050,7 +45901,7 @@
 	exports.default = IMG;
 
 /***/ },
-/* 613 */
+/* 611 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46100,7 +45951,7 @@
 	exports.default = INLINECODE;
 
 /***/ },
-/* 614 */
+/* 612 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46150,7 +46001,7 @@
 	exports.default = LI;
 
 /***/ },
-/* 615 */
+/* 613 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46206,7 +46057,7 @@
 	exports.default = LIST;
 
 /***/ },
-/* 616 */
+/* 614 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46222,7 +46073,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _shortid = __webpack_require__(617);
+	var _shortid = __webpack_require__(615);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46273,30 +46124,30 @@
 	exports.default = MARKDOWN;
 
 /***/ },
-/* 617 */
+/* 615 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	module.exports = __webpack_require__(618);
+	module.exports = __webpack_require__(616);
 
 
 /***/ },
-/* 618 */
+/* 616 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var alphabet = __webpack_require__(619);
-	var encode = __webpack_require__(621);
-	var decode = __webpack_require__(623);
-	var build = __webpack_require__(624);
-	var isValid = __webpack_require__(625);
+	var alphabet = __webpack_require__(617);
+	var encode = __webpack_require__(619);
+	var decode = __webpack_require__(621);
+	var build = __webpack_require__(622);
+	var isValid = __webpack_require__(623);
 
 	// if you are using cluster or multiple servers use this to make each instance
 	// has a unique value for worker
 	// Note: I don't know if this is automatically set when using third
 	// party cluster solutions such as pm2.
-	var clusterWorkerId = __webpack_require__(626) || 0;
+	var clusterWorkerId = __webpack_require__(624) || 0;
 
 	/**
 	 * Set the seed.
@@ -46352,12 +46203,12 @@
 
 
 /***/ },
-/* 619 */
+/* 617 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var randomFromSeed = __webpack_require__(620);
+	var randomFromSeed = __webpack_require__(618);
 
 	var ORIGINAL = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-';
 	var alphabet;
@@ -46456,7 +46307,7 @@
 
 
 /***/ },
-/* 620 */
+/* 618 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -46487,12 +46338,12 @@
 
 
 /***/ },
-/* 621 */
+/* 619 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var randomByte = __webpack_require__(622);
+	var randomByte = __webpack_require__(620);
 
 	function encode(lookup, number) {
 	    var loopCounter = 0;
@@ -46512,7 +46363,7 @@
 
 
 /***/ },
-/* 622 */
+/* 620 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -46532,11 +46383,11 @@
 
 
 /***/ },
-/* 623 */
+/* 621 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var alphabet = __webpack_require__(619);
+	var alphabet = __webpack_require__(617);
 
 	/**
 	 * Decode the id to get the version and worker
@@ -46555,13 +46406,13 @@
 
 
 /***/ },
-/* 624 */
+/* 622 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var encode = __webpack_require__(621);
-	var alphabet = __webpack_require__(619);
+	var encode = __webpack_require__(619);
+	var alphabet = __webpack_require__(617);
 
 	// Ignore all milliseconds before a certain time to reduce the size of the date entropy without sacrificing uniqueness.
 	// This number should be updated every year or so to keep the generated id short.
@@ -46609,11 +46460,11 @@
 
 
 /***/ },
-/* 625 */
+/* 623 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var alphabet = __webpack_require__(619);
+	var alphabet = __webpack_require__(617);
 
 	function isShortId(id) {
 	    if (!id || typeof id !== 'string' || id.length < 6 ) {
@@ -46634,7 +46485,7 @@
 
 
 /***/ },
-/* 626 */
+/* 624 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -46643,7 +46494,7 @@
 
 
 /***/ },
-/* 627 */
+/* 625 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46693,7 +46544,7 @@
 	exports.default = P;
 
 /***/ },
-/* 628 */
+/* 626 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46743,7 +46594,7 @@
 	exports.default = REF;
 
 /***/ },
-/* 629 */
+/* 627 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46793,7 +46644,7 @@
 	exports.default = SPAN;
 
 /***/ },
-/* 630 */
+/* 628 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46843,7 +46694,7 @@
 	exports.default = STRONG;
 
 /***/ },
-/* 631 */
+/* 629 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46893,7 +46744,7 @@
 	exports.default = UL;
 
 /***/ },
-/* 632 */
+/* 630 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46943,7 +46794,7 @@
 	exports.default = OL;
 
 /***/ },
-/* 633 */
+/* 631 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -46979,7 +46830,7 @@
 	exports.default = transformCodeBlocks;
 
 /***/ },
-/* 634 */
+/* 632 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -46995,7 +46846,7 @@
 	};
 
 /***/ },
-/* 635 */
+/* 633 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
@@ -47020,11 +46871,286 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 635;
+	webpackContext.id = 633;
 
 
 /***/ },
+/* 634 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var propTypes = {
+	  location: _react.PropTypes.object.isRequired
+	};
+
+	function PageNotFound(_ref) {
+	  var location = _ref.location;
+
+	  return _react2.default.createElement(
+	    'p',
+	    null,
+	    'Page not found - the path, ',
+	    _react2.default.createElement(
+	      'code',
+	      null,
+	      location.pathname
+	    ),
+	    ', did not match any React Router routes.'
+	  );
+	}
+
+	PageNotFound.propTypes = propTypes;
+
+	exports.default = PageNotFound;
+
+/***/ },
+/* 635 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(178);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var propTypes = {
+	  children: _react.PropTypes.element
+	};
+
+	function ExampleComponent(_ref) {
+	  var children = _ref.children;
+
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      'This is an example page. Refresh the page or copy/paste the url to test out the redirect functionality (this same page should load after the redirect).'
+	    ),
+	    children || _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/example/two-deep?field1=foo&field2=bar#boom!' },
+	        'Example two deep with query and hash'
+	      )
+	    )
+	  );
+	}
+
+	ExampleComponent.propTypes = propTypes;
+
+	exports.default = ExampleComponent;
+
+/***/ },
 /* 636 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(178);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var propTypes = {
+	  location: _react.PropTypes.object.isRequired
+	};
+
+	function ExampleTwoDeepComponent(_ref) {
+	  var location = _ref.location;
+
+	  var queryPresent = Object.keys(location.query).length !== 0;
+	  var hashPresent = location.hash !== '';
+
+	  function queryStringTitle() {
+	    if (queryPresent) return 'The query string field-value pairs are:';
+	    return 'No query string in the url';
+	  }
+
+	  function hashFragmentTitle() {
+	    if (hashPresent) return 'The hash fragment is:';
+	    return 'No hash fragment in the url';
+	  }
+
+	  function linkToShowQueryAndOrHash() {
+	    if (queryPresent && hashPresent) return null;
+
+	    var queryString = queryPresent ? location.search : '?field1=foo&field2=bar';
+	    var hashFragment = hashPresent ? location.hash : '#boom!';
+
+	    var linkText = '';
+	    if (queryPresent && !hashPresent) linkText = 'Show with hash fragment';
+	    if (!queryPresent && hashPresent) linkText = 'Show with query string';
+	    if (!queryPresent && !hashPresent) linkText = 'Show with query string and hash fragment';
+
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/example/two-deep' + queryString + hashFragment },
+	        linkText
+	      )
+	    );
+	  }
+
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        queryStringTitle()
+	      ),
+	      _react2.default.createElement(
+	        'ul',
+	        null,
+	        Object.keys(location.query).map(function (field, index) {
+	          return _react2.default.createElement(
+	            'li',
+	            { key: index },
+	            field,
+	            ': ',
+	            location.query[field]
+	          );
+	        })
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        hashFragmentTitle()
+	      ),
+	      _react2.default.createElement(
+	        'ul',
+	        null,
+	        hashPresent ? _react2.default.createElement(
+	          'li',
+	          null,
+	          location.hash.slice(1)
+	        ) : undefined
+	      )
+	    ),
+	    linkToShowQueryAndOrHash()
+	  );
+	}
+
+	ExampleTwoDeepComponent.propTypes = propTypes;
+
+	exports.default = ExampleTwoDeepComponent;
+
+/***/ },
+/* 637 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ramda = __webpack_require__(262);
+
+	var _PostText = __webpack_require__(591);
+
+	var _PostText2 = _interopRequireDefault(_PostText);
+
+	var _getPosts = __webpack_require__(576);
+
+	var _getPosts2 = _interopRequireDefault(_getPosts);
+
+	var _posts_dates = __webpack_require__(632);
+
+	var _posts_dates2 = _interopRequireDefault(_posts_dates);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Post = function (_Component) {
+	    _inherits(Post, _Component);
+
+	    function Post() {
+	        _classCallCheck(this, Post);
+
+	        return _possibleConstructorReturn(this, (Post.__proto__ || Object.getPrototypeOf(Post)).apply(this, arguments));
+	    }
+
+	    _createClass(Post, [{
+	        key: 'render',
+	        value: function render() {
+	            var posts = (0, _getPosts2.default)();
+	            var _props$params = this.props.params,
+	                category = _props$params.category,
+	                slug = _props$params.slug;
+
+	            var postObj = (0, _ramda.find)((0, _ramda.propEq)('slugifiedUrl', slug))(posts);
+	            var text = __webpack_require__(633)("./" + postObj.category + '/' + postObj.filename);
+	            var postDate = _posts_dates2.default[postObj.filename];
+	            var dateObject = new Date(postDate);
+	            var formattedDate = dateObject.getFullYear() + '.' + (dateObject.getMonth() + 1) + '.' + dateObject.getDate();
+	            return _react2.default.createElement(_PostText2.default, {
+	                postDate: postDate,
+	                formattedDate: formattedDate,
+	                slugifiedCategory: postObj.slugifiedCategory,
+	                category: postObj.category,
+	                text: text
+	            });
+	        }
+	    }]);
+
+	    return Post;
+	}(_react.Component);
+
+	exports.default = Post;
+
+/***/ },
+/* 638 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
