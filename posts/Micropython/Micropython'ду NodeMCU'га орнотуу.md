@@ -53,6 +53,7 @@ picocom /dev/ttyUSB0 --baud=115200
 ```
 
 Эгерде төмөнкү сыяктуу жазуулар чыкпаса...
+
 ```bash
 port is        : /dev/ttyUSB0
 flowcontrol    : none
@@ -69,12 +70,7 @@ receive_cmd is : rz -vv
 imap is        : 
 omap is        : 
 emap is        : crcrlf,delbs,
-
 Terminal ready
-
-MicroPython v1.8.3-61-g531217a on 2016-08-27; ESP module with ESP8266
-Type "help()" for more information.
->>>
 ```
 
 ...анда Nodemcu'дагы RST (reset) басмагын басып коюңуз жана Enter'ди бир жолу басыңыз.
