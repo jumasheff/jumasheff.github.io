@@ -80,7 +80,7 @@
 
 	var _Post2 = _interopRequireDefault(_Post);
 
-	var _Category = __webpack_require__(635);
+	var _Category = __webpack_require__(636);
 
 	var _Category2 = _interopRequireDefault(_Category);
 
@@ -27403,9 +27403,12 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 	var detectHover = {
 	  update: function update() {
-	    if (typeof window !== 'undefined' && typeof window.matchMedia === 'function') {
+	    if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && typeof window.matchMedia === 'function') {
 	      detectHover.hover = window.matchMedia('(hover: hover)').matches;
 	      detectHover.none = window.matchMedia('(hover: none)').matches || window.matchMedia('(hover: on-demand)').matches;
 	      detectHover.anyHover = window.matchMedia('(any-hover: hover)').matches;
@@ -27426,9 +27429,12 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 	var detectPointer = {
 	  update: function update() {
-	    if (typeof window !== 'undefined' && typeof window.matchMedia === 'function') {
+	    if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && typeof window.matchMedia === 'function') {
 	      detectPointer.fine = window.matchMedia('(pointer: fine)').matches;
 	      detectPointer.coarse = window.matchMedia('(pointer: coarse)').matches;
 	      detectPointer.none = window.matchMedia('(pointer: none)').matches;
@@ -27451,9 +27457,12 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 	var detectTouchEvents = {
 	  update: function update() {
-	    if (typeof window !== 'undefined') {
+	    if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object') {
 	      detectTouchEvents.hasApi = 'ontouchstart' in window;
 	      detectTouchEvents.maxTouchPoints = detectTouchEvents.hasApi ? window.navigator && window.navigator.maxTouchPoints : undefined;
 	    }
@@ -27534,10 +27543,13 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 	// adapted from https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
 	var detectPassiveEvents = {
 	  update: function update() {
-	    if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
+	    if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && typeof window.addEventListener === 'function' && typeof Object.defineProperty === 'function') {
 	      var passive = false;
 	      var options = Object.defineProperty({}, 'passive', {
 	        get: function get() {
@@ -28245,8 +28257,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../css-loader/index.js?modules!./flexboxgrid.css", function() {
-				var newContent = require("!!./../../css-loader/index.js?modules!./flexboxgrid.css");
+			module.hot.accept("!!../../css-loader/index.js?modules!./flexboxgrid.css", function() {
+				var newContent = require("!!../../css-loader/index.js?modules!./flexboxgrid.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -28492,7 +28504,7 @@
 			};
 		},
 		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+			return /msie [6-9]\b/.test(self.navigator.userAgent.toLowerCase());
 		}),
 		getHeadElement = memoize(function () {
 			return document.head || document.getElementsByTagName("head")[0];
@@ -40960,7 +40972,7 @@
 /* 580 */
 /***/ function(module, exports) {
 
-	module.exports = "# Micropython'ду NodeMCU'га жаздыруу\n\n1. NodeMCU'га micropython орнотуш үчүн, компьютерибизге  *esptool.py* аттуу программаны орнотушубуз керек. (Ал тууралуу соңку посттордун арасынан караңыз).\n\n2. Сериялык портко жетки болуш керек. (Бул тууралуу дагы соңку посттордон караңыз).\n\n"
+	module.exports = "# Micropython'ду NodeMCU'га жаздыруу\n\n## esptool.py керек\nNodeMCU'га micropython орнотуш үчүн, компьютерибизге  *esptool.py* аттуу программаны орнотушубуз керек. Ал тууралуу [бул](/posts/micropython/esptool-py-ornotuu) жерден окусаңыз болот.\n\n## Сериялык портубуз даяр болушу керек\nСериялык портко жетки болуш керек. Ал тууралуу [бул](/posts/micropython/com-porttu-ishke-dayiyndoo) жерден окусаңыз болот.\n\n## picocom керек\n`picocom` жок болсо, орнотуп алабыз:\n\n```bash\nsudo apt-get install picocom\n```\n\n## Компиляциялаган micropython керек \nMicropython'ду [мында](/posts/micropython/micropython-du-kompilyaciyaloo) орнотуп, компиляция кылганбыз. Ошонун ичиндеги `esp8266` анын ичиндеги `build` деген папкасына өтөбүз. Кийинки кадамдарда ал жердеги `firmware-combined.bin` деген файл керек болот.\n\n## Nodemcu'нун мээсин тазалашыбыз керек\nNodemcu'ну компьютердин USB'сине туташтырып, анын ичиндегилерин (жаздырылган абалкы программалык жабдыгын) жок кылабыз:\n\n```bash\nesptool.py -p /dev/ttyUSB0 erase_flash\n```\n\n## Nodemcu'га micropython'ду жаздырабыз\nЭми `firmware-combined.bin` файлын Nodemcu'га жаздырабыз:\n\n```bash\nesptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 firmware-combined.bin\n```\n\nЖаздыруу учурунда кийинки сыяктуу жазуулар чыгат:\n\n```bash\nConnecting...\nRunning Cesanta flasher stub...\nFlash params set to 0x0240\nWriting 532480 @ 0x0... 43008 (8 %)\n...\nWriting 532480 @ 0x0... 316416 (59 %)\n...\nWriting 532480 @ 0x0... 532480 (100 %)\nWrote 532480 bytes at 0x0 in 46.0 seconds (92.6 kbit/s)...\nLeaving...\n```\n\n## Туташабыз\nЭми микроконтроллерибизге туташып көрөбүз: \n\n```bash\npicocom /dev/ttyUSB0 115200\n```\n\nЭгерде төмөнкү сыяктуу жазуулар чыкпаса...\n```bash\nport is        : /dev/ttyUSB0\nflowcontrol    : none\nbaudrate is    : 115200\nparity is      : none\ndatabits are   : 8\nescape is      : C-a\nlocal echo is  : no\nnoinit is      : no\nnoreset is     : no\nnolock is      : no\nsend_cmd is    : sz -vv\nreceive_cmd is : rz -vv\nimap is        : \nomap is        : \nemap is        : crcrlf,delbs,\n\nTerminal ready\n\nMicroPython v1.8.3-61-g531217a on 2016-08-27; ESP module with ESP8266\nType \"help()\" for more information.\n>>>\n```\n\n...анда Nodemcu'дагы RST (reset) басмагын басып коюңуз жана Enter'ди бир жолу басыңыз.\n\n## Текшеребиз\n\n```python\nimport esp\nesp.check_fw()\n```\n\nдеп жазганда, кийинки сыяктуу жазуулар чыгып, эң негизгиси -- төмөн жаганда `True` чыгышы керек.\n\n```bash\nsize: 571100\nmd5: e2a92082e4a1bbe3781efaa4a67a6fc7\nTrue\n```\n\n## Салтты бузбай кийинкини жазабыз:\n\n```python\nprint('Hello, World!')\n```\n\nОшо..."
 
 /***/ },
 /* 581 */
@@ -41349,7 +41361,7 @@
 
 	var _getPosts2 = _interopRequireDefault(_getPosts);
 
-	var _posts_dates = __webpack_require__(633);
+	var _posts_dates = __webpack_require__(634);
 
 	var _posts_dates2 = _interopRequireDefault(_posts_dates);
 
@@ -41379,7 +41391,7 @@
 	          slug = _props$params.slug;
 
 	      var postObj = (0, _ramda.find)((0, _ramda.propEq)('slugifiedUrl', slug))(posts);
-	      var text = __webpack_require__(634)("./" + postObj.category + '/' + postObj.filename);
+	      var text = __webpack_require__(635)("./" + postObj.category + '/' + postObj.filename);
 	      var postDate = _posts_dates2.default[postObj.filename];
 	      var dateObject = new Date(postDate);
 	      var formattedDate = dateObject.getFullYear() + '.' + (dateObject.getMonth() + 1) + '.' + dateObject.getDate();
@@ -41453,7 +41465,7 @@
 
 	var _componentLoop2 = _interopRequireDefault(_componentLoop);
 
-	var _transformCodeBlocks = __webpack_require__(632);
+	var _transformCodeBlocks = __webpack_require__(633);
 
 	var _transformCodeBlocks2 = _interopRequireDefault(_transformCodeBlocks);
 
@@ -45600,27 +45612,27 @@
 
 	var _Markdown2 = _interopRequireDefault(_Markdown);
 
-	var _P = __webpack_require__(626);
+	var _P = __webpack_require__(627);
 
 	var _P2 = _interopRequireDefault(_P);
 
-	var _Ref = __webpack_require__(627);
+	var _Ref = __webpack_require__(628);
 
 	var _Ref2 = _interopRequireDefault(_Ref);
 
-	var _Span = __webpack_require__(628);
+	var _Span = __webpack_require__(629);
 
 	var _Span2 = _interopRequireDefault(_Span);
 
-	var _Strong = __webpack_require__(629);
+	var _Strong = __webpack_require__(630);
 
 	var _Strong2 = _interopRequireDefault(_Strong);
 
-	var _Ul = __webpack_require__(630);
+	var _Ul = __webpack_require__(631);
 
 	var _Ul2 = _interopRequireDefault(_Ul);
 
-	var _Ol = __webpack_require__(631);
+	var _Ol = __webpack_require__(632);
 
 	var _Ol2 = _interopRequireDefault(_Ol);
 
@@ -46277,56 +46289,14 @@
 	var alphabet = __webpack_require__(619);
 	var encode = __webpack_require__(621);
 	var decode = __webpack_require__(623);
-	var isValid = __webpack_require__(624);
-
-	// Ignore all milliseconds before a certain time to reduce the size of the date entropy without sacrificing uniqueness.
-	// This number should be updated every year or so to keep the generated id short.
-	// To regenerate `new Date() - 0` and bump the version. Always bump the version!
-	var REDUCE_TIME = 1459707606518;
-
-	// don't change unless we change the algos or REDUCE_TIME
-	// must be an integer and less than 16
-	var version = 6;
+	var build = __webpack_require__(624);
+	var isValid = __webpack_require__(625);
 
 	// if you are using cluster or multiple servers use this to make each instance
 	// has a unique value for worker
 	// Note: I don't know if this is automatically set when using third
 	// party cluster solutions such as pm2.
-	var clusterWorkerId = __webpack_require__(625) || 0;
-
-	// Counter is used when shortid is called multiple times in one second.
-	var counter;
-
-	// Remember the last time shortid was called in case counter is needed.
-	var previousSeconds;
-
-	/**
-	 * Generate unique id
-	 * Returns string id
-	 */
-	function generate() {
-
-	    var str = '';
-
-	    var seconds = Math.floor((Date.now() - REDUCE_TIME) * 0.001);
-
-	    if (seconds === previousSeconds) {
-	        counter++;
-	    } else {
-	        counter = 0;
-	        previousSeconds = seconds;
-	    }
-
-	    str = str + encode(alphabet.lookup, version);
-	    str = str + encode(alphabet.lookup, clusterWorkerId);
-	    if (counter > 0) {
-	        str = str + encode(alphabet.lookup, counter);
-	    }
-	    str = str + encode(alphabet.lookup, seconds);
-
-	    return str;
-	}
-
+	var clusterWorkerId = __webpack_require__(626) || 0;
 
 	/**
 	 * Set the seed.
@@ -46363,6 +46333,13 @@
 	    return alphabet.shuffled();
 	}
 
+	/**
+	 * Generate unique id
+	 * Returns string id
+	 */
+	function generate() {
+	  return build(clusterWorkerId);
+	}
 
 	// Export all other functions as properties of the generate function
 	module.exports = generate;
@@ -46582,6 +46559,60 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	var encode = __webpack_require__(621);
+	var alphabet = __webpack_require__(619);
+
+	// Ignore all milliseconds before a certain time to reduce the size of the date entropy without sacrificing uniqueness.
+	// This number should be updated every year or so to keep the generated id short.
+	// To regenerate `new Date() - 0` and bump the version. Always bump the version!
+	var REDUCE_TIME = 1459707606518;
+
+	// don't change unless we change the algos or REDUCE_TIME
+	// must be an integer and less than 16
+	var version = 6;
+
+	// Counter is used when shortid is called multiple times in one second.
+	var counter;
+
+	// Remember the last time shortid was called in case counter is needed.
+	var previousSeconds;
+
+	/**
+	 * Generate unique id
+	 * Returns string id
+	 */
+	function build(clusterWorkerId) {
+
+	    var str = '';
+
+	    var seconds = Math.floor((Date.now() - REDUCE_TIME) * 0.001);
+
+	    if (seconds === previousSeconds) {
+	        counter++;
+	    } else {
+	        counter = 0;
+	        previousSeconds = seconds;
+	    }
+
+	    str = str + encode(alphabet.lookup, version);
+	    str = str + encode(alphabet.lookup, clusterWorkerId);
+	    if (counter > 0) {
+	        str = str + encode(alphabet.lookup, counter);
+	    }
+	    str = str + encode(alphabet.lookup, seconds);
+
+	    return str;
+	}
+
+	module.exports = build;
+
+
+/***/ },
+/* 625 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
 	var alphabet = __webpack_require__(619);
 
 	function isShortId(id) {
@@ -46603,7 +46634,7 @@
 
 
 /***/ },
-/* 625 */
+/* 626 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -46612,7 +46643,7 @@
 
 
 /***/ },
-/* 626 */
+/* 627 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46662,7 +46693,7 @@
 	exports.default = P;
 
 /***/ },
-/* 627 */
+/* 628 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46712,7 +46743,7 @@
 	exports.default = REF;
 
 /***/ },
-/* 628 */
+/* 629 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46762,7 +46793,7 @@
 	exports.default = SPAN;
 
 /***/ },
-/* 629 */
+/* 630 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46812,7 +46843,7 @@
 	exports.default = STRONG;
 
 /***/ },
-/* 630 */
+/* 631 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46862,7 +46893,7 @@
 	exports.default = UL;
 
 /***/ },
-/* 631 */
+/* 632 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46912,7 +46943,7 @@
 	exports.default = OL;
 
 /***/ },
-/* 632 */
+/* 633 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -46948,7 +46979,7 @@
 	exports.default = transformCodeBlocks;
 
 /***/ },
-/* 633 */
+/* 634 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -46964,7 +46995,7 @@
 	};
 
 /***/ },
-/* 634 */
+/* 635 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
@@ -46989,11 +47020,11 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 634;
+	webpackContext.id = 635;
 
 
 /***/ },
-/* 635 */
+/* 636 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
