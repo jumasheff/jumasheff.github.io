@@ -1,7 +1,8 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes, Component } from 'react'
+import R from 'ramda'
 import getPosts from '../helpers/getPosts'
 import PostText from './PostText'
-import postsDates from '../data/posts_dates.json';
+import postsDates from '../data/posts_dates.json'
 
 export default class Posts extends Component {
   static propTypes = {
@@ -13,16 +14,25 @@ export default class Posts extends Component {
     return dateObject.getFullYear() + '.' + (dateObject.getMonth() + 1) + '.' + dateObject.getDate();
   }
 
+  postsWithDate = () => {
+    const posts = getPosts()
+    let newPosts = []
+    posts.forEach(p => {
+      let post = Object.assign({}, p, { postDate: postsDates[p.filename] })
+      newPosts.push(post)
+    })
+    return newPosts
+  }
+
   renderPosts = () => (
-    getPosts().map((p, ind) => {
-      const postDate = postsDates[p.filename]
+    this.postsWithDate().map((p, ind) => {
       const text = require(`../posts/${p.category}/${p.filename}`);
       return (
         <PostText
           key={'post'+ind}
           short={this.props.short}
-          postDate={postDate}
-          formattedDate={this.formatDate(postDate)}
+          postDate={p.postDate}
+          formattedDate={this.formatDate(p.postDate)}
           slugifiedCategory={p.slugifiedCategory}
           category={p.category}
           text={text}
