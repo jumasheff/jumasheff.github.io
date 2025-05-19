@@ -1,0 +1,90 @@
+# The layout text of site
+
+# ----- Commons label -----
+
+layout:
+  post: Пост
+  category: Категория
+  tag: Тег
+
+# The tabs of sidebar
+tabs:
+  # format: <filename_without_extension>: <value>
+  home: Башкы бет
+  categories: Категориялар
+  tags: Тегдер
+  archives: Архив
+  about: Сайт жөнүндө
+
+# the text displayed in the search bar & search results
+search:
+  hint: издөө
+  cancel: Жокко чыгаруу
+  no_results: Кечиресиз! Эч нерсе табылган жок.
+
+panel:
+  lastmod: Жакында жаңыртылды
+  trending_tags: Популярдуу тегдер
+  toc: Мазмуну
+
+copyright:
+  # Shown at the bottom of the post
+  license:
+    template: Бул пост автор тарабынан :LICENSE_NAME лицензиясы менен корголгон.
+    name: CC BY 4.0
+    link: https://creativecommons.org/licenses/by/4.0/
+
+  # Displayed in the footer
+  brief: Айрым укуктар корголгон.
+  verbose: >-
+    Эгерде башкасы көрсөтүлбөсө, бул сайттагы автордук посттор Creative Commons Attribution 4.0 International (CC BY 4.0) лицензиясы менен автор тарабынан корголгон.
+
+meta: :PLATFORM үчүн :THEME темасы колдонулууда.
+
+not_found:
+  statement: Кечиресиз, биз URL дарегин ката кетирдик же ал жок нерсеге шилтеме кылууда.
+
+notification:
+  update_found: Мазмундун жаңы версиясы жеткиликтүү.
+  update: Жаңыртуу
+
+# ----- Posts related labels -----
+
+post:
+  written_by: Автору
+  posted: Жарыяланды
+  updated: Жаңыртылды
+  words: сөз
+  pageview_measure: көрүү
+  read_time:
+    unit: мүн.
+    prompt: окууга
+  relate_posts: Окшош посттор
+  share: Бөлүшүү
+  button:
+    next: Кийинки пост
+    previous: Мурунку пост
+    copy_code:
+      succeed: Көчүрүлдү!
+    share_link:
+      title: Шилтемени көчүрүү
+      succeed: Шилтеме ийгиликтүү көчүрүлдү!
+
+# Date time format.
+# See: <http://strftime.net/>, <https://day.js.org/docs/en/display/format>
+df:
+  post:
+    strftime: "%d.%m.%Y"
+    dayjs: "DD.MM.YYYY"
+  archives:
+    strftime: "%b"
+    dayjs: "MMM"
+
+# categories page
+categories:
+  category_measure:
+    singular: категория
+    plural: категориялар
+  post_measure:
+    singular: пост
+    plural: посттор
