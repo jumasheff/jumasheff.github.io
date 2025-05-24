@@ -58,7 +58,7 @@ post:
   pageview_measure: көрүү
   read_time:
     unit: мүн.
-    prompt: окууга
+    prompt: окуу
   relate_posts: Окшош посттор
   share: Бөлүшүү
   button:
