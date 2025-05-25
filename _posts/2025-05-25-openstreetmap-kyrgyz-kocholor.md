@@ -45,7 +45,7 @@ _Overpass жүктөп алуу статусу_
 
 
 ### 2-кадам. Google Gemini Flash менен көчө аттарын кыргызчалоо
-Бул маселени чечиш үчүн `streets_with_no_kyrgyz_names_with_metadata_orig.osm` файлын окуп, көчө аттарын бир-бирден кыргызчалап, `streets_with_kyrgyz_translations.osm` файлына салуучу код жаздым.
+Бул маселени чечиш үчүн `streets_with_no_kyrgyz_names_with_metadata_orig.osm` файлын окуп, көчө аттарын бир-бирден кыргызчалап, `streets_with_kyrgyz_translations.osm` файлына салуучу [код](https://github.com/jumasheff/osm-kyrgyz-streets) жаздым.
 ![img-description](adding-kyrgyz-names-using-llm.png)
 _Gemini 2.0 Flash менен көчөлөрдүн аттарын кыргызчалоо скрипти_
 
