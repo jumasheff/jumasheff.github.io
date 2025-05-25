@@ -72,3 +72,6 @@ _Натыйжаларын текшеребиз_
 Ишнтин натыйжасы мына!
 ![img-description](osm-edit-result-updated.png)
 _Маалымат жаңыртылыптыр!_
+
+### PS
+[Кийинки макалада]({% link _posts/2025-05-25-openstreetmap-kyrgyz-kocholor.md %}) жапырт өзрөртүү ыкмасын караштырабыз.

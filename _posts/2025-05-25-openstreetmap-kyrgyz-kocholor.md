@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "OpenStreetMap'теги көчөлөргө кыргызча аттарды кошобуз"
+date:   2025-05-25 12:39:00 +0600
+categories: tutorial map osm overpass-turbo Python osmosis JOSM
+author: murat
+toc: false
+comments: false
+media_subpath: /assets/img/2025-05-25/
+---
+## Автоматташтырабыз
+
+[Мурунку макалада]({% link _posts/2025-05-24-openstreetmap-kyrgyz-atalyshtar.md %}) OpenStreetMap интерфейси аркылуу объектинин аталышын "кол менен" өзгөртүү боюнча айтылган эле. Мунусунда бир-бирден эмес, массалык түрдө өзгөртүү киргизүүнү көздөйбүз. Бул макалада түрлүү технологияларды карап чыгабыз, мисалы Overpass API сурам тили (query language), geojson, geopandas, JOSM ж.б.
+План мындай:
+1-кадам. <https://overpass-turbo.eu> сайтынан Бишкектин кыргызча аты жок көчөлөрүн `osm` форматында алып чыгабыз.
+2-кадам. Google Gemini менен орусча аттарды кыргызчалап, `name:ky` кошуп чыгабыз. Мисалы, "Мариупольский переулок" кыргызча "Мариуполь чолок көчөсү" болуп калат.
+3-кадам. Жаңыртылган маалыматты JOSM аркылуу OpenStreetMap'ке жүктөп беребиз.
+
+### 1-кадам. <https://overpass-turbo.eu> сайтынан Бишкектин кыргызча аты жок көчөлөрүн `osm` форматында алып чыгабыз.
+
+Бир топ изденип отуруп, могу макаланы таптым: <https://gist.github.com/JamesChevalier/b861388d35476cee4fcc3626a60af60f>. Ошону колдонуп, кийинки кадамдарга өтө алдым.
+
+<https://overpass-turbo.eu> сайтына өтүп, төмөнкү сурам текстин ачылган редакторго салабыз.
+```overpass
+[out:xml][timeout:900];
+area(3608493930)->.a;
+(
+  way(area.a)
+  ["highway"]
+  ["name"]
+  ["highway"!~"path|steps|motorway|motorway_link|raceway|bridleway|proposed|construction|elevator|bus_guideway|footway|cycleway"]
+  [!"name:ky"];
+);
+(._;>;);
+out meta;
+```
+Мында "`name` деген талаасы бар, бирок `name:ky` талаасы жок көчөлөрдү алып чык" деген буйрук жазылган.
+Жазылгандан кийин, "Старт" деген жашыл баскычты басабыз (төмөнкү скриншотту караңыз).
+![img-description](overpass-query.png)
+_Overpass API сурамын жазуу_
+
+Бир аз ойлонгон соң, жүктөп алынды, бирок өтө көп маалымат болду деген эскертүү чыгат. Уланта бер дейбиз. Көз ирмемде жүктөлүп бүтөт, экрандын төмөн жагынын оң тарабында статустан кошумча маалымат көрө аласыз. Жүктөлүп алынган файлдын атын `streets_with_no_kyrgyz_names_with_metadata_orig.osm` деп, долбоордун папкасына кошуп койдум.
+![img-description](overpass-result-status.png)
+_Overpass жүктөп алуу статусу_
+
+
+### 2-кадам. Google Gemini Flash менен көчө аттарын кыргызчалоо
+Бул маселени чечиш үчүн `streets_with_no_kyrgyz_names_with_metadata_orig.osm` файлын окуп, көчө аттарын бир-бирден кыргызчалап, `streets_with_kyrgyz_translations.osm` файлына салуучу код жаздым.
+![img-description](adding-kyrgyz-names-using-llm.png)
+_Gemini 2.0 Flash менен көчөлөрдүн аттарын кыргызчалоо скрипти_
+
+Ар бир котормону текшерип, жактырсам, `y`, жактырбасам `e` деп, туура көргөн котормону кошуп, улантып жаттым.
+Бул материал үчүн 60 көчөнү жүктөп көрөйүн деп чечтим.
+
+### 3-кадам. Жаңыртылган маалыматты JOSM аркылуу OpenStreetMap'ке жүктөп беребиз.
+
+[osmosis](https://github.com/openstreetmap/osmosis/releases) программасын жүктөп алып, `~/bin/osmosis-0.49.2` папкасына жылдырып коёбуз (учурда программанын версиясы `0.49.2` экен).
+Анан `streets_with_no_kyrgyz_names_with_metadata_orig.osm` деген файл менен, кыргызчаланган көчөлөрдү камтыган `streets_with_kyrgyz_translations.osm` файлдардын ортосундагы айрымаларды таап чыгуучу программаны төмөнкүдөй кылып жүгүртүп, айрымаларды камтыган `changes.osc` алабыз:
+```bash
+~/bin/osmosis-0.49.2/bin/osmosis --read-xml file="streets_with_kyrgyz_translations.osm" --read-xml file="streets_with_no_kyrgyz_names_with_metadata_orig.osm" --derive-change --write-xml-change file="changes.osc"
+```
+
+`changes.osc` файлын бир сыйра текшерип коюшубуз керек экен, болбосо жогорудагы эки файл ордулары менен алмашып калса, котормолор жок болот экен.
+Эми [JOSM](https://josm.openstreetmap.de/wiki/Download) атуу программаны орнотуп алып, аны жүгүртөбүз. Ачылганда, шап эле баягы өгөрүүлөрдү (жаңыртууларды) камтыган `changes.osc` файлын ачабыз.
+
+![img-description](josm-start.png)
+_JOSM программасынын интерфейси_
+
+Ушул JOSM'дун жогорку сол жагында папканын сүрөтчөсү турат, ошону басабыз. `changes.osc` файлын таап, аны тандап, ачабыз. Ошондо төмөнкүдөй кап-кара экран болуп калат. Коркпой ишибизди уланта беребиз.
+
+![img-description](josm-open-changes-file.png)
+_JOSM өзгөрүүлөр ачылгандагысы_
+
+Эми жогорку сол жактагы папкадан кийинки 3-сүрөтчөнү, жогору караган жашыл жебени, басабыз. Ошондо төмөнкүдөй экран чыгат:
+![img-description](josm-upload-changes.png)
+_JOSM менен өзгөрүүлөрдү жүктөп берүү_
+
+`Provide a brief comment for the changes you are uploading` (жүктөп берип жаткан өзгөрүүлөр тууралуу кыскача комментарий бер) деген жерге `Add Kyrgyz names` деп жазып койдум. Эми `Specify the data source for the changes` деген сапка `knowledge` (билим) деп жазабыз. Кыскасы, эмне өзгөрттүң, ал өзгөртүүлөр эмненин негизинде алынды деген суроого жооп беребиз. Ал саптар талапталгандыктан, жазбай коё албайбыз.
+
+Эми `Upload changes` деген баскычты басабыз. Картадан аутентификация бол деп, браузерди ачып берет. Колдонуучу атыбызды, сырсөзүбүздү жазабыз.
+
+![img-description](josm-upload-form-fields.png)
+_JOSM талап кылган өзгөрүүлөр тууралуу маалымат_
+
+Баскан соң, экрандын төмөн жагынын сол тарабында `Upload successful` деген жазуу 2-3 секундага пайда болуп, жүктөп берүү процесси ийгиликтүү өткөнүн билдирет.
+
+### 4-кадам. Жаңыртылган маалыматтын картада пайда болуу
+
+Жүктөп берген соң 30-40 мүнөттө картадагы таблицада пайда болот экен. Ал эми картанын өзүнүн сүрөтүндө кечирээк пайда болот экен, [мурунку посттогудай]({% link _posts/2025-05-24-openstreetmap-kyrgyz-atalyshtar.md %}). 
+![img-description](bulk-upload-results-on-map.png)
+_Натыйжа OSM картасында_
