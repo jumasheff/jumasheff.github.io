@@ -1,84 +1,93 @@
-<!-- markdownlint-disable-next-line -->
-<div align="center">
+# Chirpy Jekyll Theme
 
-  <!-- markdownlint-disable-next-line -->
-  # Chirpy Jekyll Theme
+A minimal, responsive, and feature-rich Jekyll theme for technical writing.
 
-  A minimal, responsive, and feature-rich Jekyll theme for technical writing.
+## Getting Started
 
-  [![CI](https://img.shields.io/github/actions/workflow/status/cotes2020/jekyll-theme-chirpy/ci.yml?logo=github)][ci]&nbsp;
-  [![Codacy Badge](https://img.shields.io/codacy/grade/4e556876a3c54d5e8f2d2857c4f43894?logo=codacy)][codacy]&nbsp;
-  [![GitHub license](https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy?color=goldenrod)][license]&nbsp;
-  [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy?&logo=RubyGems&logoColor=ghostwhite&label=gem&color=orange)][gem]&nbsp;
-  [![Open in Dev Containers](https://img.shields.io/badge/Dev_Containers-Open-deepskyblue?logo=linuxcontainers)][open-container]
+This guide provides instructions on how to set up, run, and deploy your Chirpy-based website.
 
-  [**Live Demo** →][demo]
+## Setting up the Environment
 
-  [![Devices Mockup](https://chirpy-img.netlify.app/commons/devices-mockup.png)][demo]
+You have two primary methods to set up your development environment:
 
-</div>
+### 1. Setting up Natively (Recommended for Unix-like OS)
 
-## Features
+For Unix-like systems, you can set up the environment natively for optimal performance.
 
-- Dark Theme
-- Localized UI language
-- Pinned Posts on Home Page
-- Hierarchical Categories
-- Trending Tags
-- Table of Contents
-- Last Modified Date
-- Syntax Highlighting
-- Mathematical Expressions
-- Mermaid Diagrams & Flowcharts
-- Dark Mode Images
-- Embed Media
-- Comment Systems
-- Built-in Search
-- Atom Feeds
-- PWA
-- Web Analytics
-- SEO & Performance Optimization
+**Steps**:
 
-## Documentation
+1.  Install Jekyll and Git: Follow the [Jekyll installation guide](https://jekyllrb.com/docs/installation/) to install Jekyll. Ensure Git is also installed.
+2.  Clone your repository to your local machine.
+3.  If you forked the theme, install Node.js and run `bash tools/init.sh` in the root directory to initialize the repository.
+4.  Install dependencies: Run `bundle` in the root of your repository.
 
-To learn how to use, develop, and upgrade the project, please refer to the [Wiki][wiki].
+### 2. Using Dev Containers (Recommended for Windows)
 
-## Contributing
+Dev Containers offer an isolated environment using Docker, preventing conflicts with your system and ensuring all dependencies are managed within the container.
 
-Contributions (_pull requests_, _issues_, and _discussions_) are what make the open-source community such an amazing place
-to learn, inspire, and create. Any contributions you make are greatly appreciated.
-For details, see the "[Contributing Guidelines][contribute-guide]".
+**Steps**:
 
-## Credits
+1.  Install Docker:
+    *   On Windows/macOS, install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+    *   On Linux, install [Docker Engine](https://docs.docker.com/engine/install/).
+2.  Install VS Code and the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
+3.  Clone your repository:
+    *   For Docker Desktop: Start VS Code and clone your repository in a container volume.
+    *   For Docker Engine: Clone your repository locally, then open it in a container via VS Code.
+4.  Wait for the Dev Containers setup to complete.
 
-### Contributors
+## Usage
 
-Thanks to [all the contributors][contributors] involved in the development of the project!
+### Start the Jekyll Server
 
-[![all-contributors](https://contrib.rocks/image?repo=cotes2020/jekyll-theme-chirpy&columns=16)][contributors]
-<sub> — Made with [contrib.rocks](https://contrib.rocks)</sub>
+To run the site locally, use the following command:
 
-### Third-Party Assets
+```bash
+bundle exec jekyll serve
+```
 
-This project is built on the [Jekyll][jekyllrb] ecosystem and some [great libraries][lib], and is developed using [VS Code][vscode] as well as tools provided by [JetBrains][jetbrains] under a non-commercial open-source software license.
+> If you are using Dev Containers, you must run this command in the VS Code Terminal.
 
-The avatar and favicon for the project's website are from [ClipartMAX][clipartmax].
+After a few seconds, the local server will be available at `http://127.0.0.1:4000`.
 
-## License
+### Configuration
 
-This project is published under [MIT License][license].
+Update the variables in `_config.yml` as needed. Some typical options include:
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[ci]: https://github.com/cotes2020/jekyll-theme-chirpy/actions/workflows/ci.yml?query=event%3Apush+branch%3Amaster
-[codacy]: https://app.codacy.com/gh/cotes2020/jekyll-theme-chirpy/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
-[license]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE
-[open-container]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/cotes2020/jekyll-theme-chirpy
-[jekyllrb]: https://jekyllrb.com/
-[clipartmax]: https://www.clipartmax.com/middle/m2i8b1m2K9Z5m2K9_ant-clipart-childrens-ant-cute/
-[demo]: https://cotes2020.github.io/chirpy-demo/
-[wiki]: https://github.com/cotes2020/jekyll-theme-chirpy/wiki
-[contribute-guide]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/docs/CONTRIBUTING.md
-[contributors]: https://github.com/cotes2020/jekyll-theme-chirpy/graphs/contributors
-[lib]: https://github.com/cotes2020/chirpy-static-assets
-[vscode]: https://code.visualstudio.com/
-[jetbrains]: https://www.jetbrains.com/?from=jekyll-theme-chirpy
+*   `url`
+*   `avatar`
+*   `timezone`
+*   `lang`
+
+Social contact options can be enabled or disabled in the `_data/contact.yml` file.
+
+## Deployment
+
+Before deploying, ensure the `url` in `_config.yml` is configured correctly. If you are not using a custom domain, or if you want to visit your website with a base URL on a web server other than GitHub Pages, set the `baseurl` to your project name (e.g., `/project-name`).
+
+### Deploy Using GitHub Actions
+
+1.  If you’re on the GitHub Free plan, keep your site repository public.
+2.  If you have committed `Gemfile.lock` and your local machine is not running Linux, update the platform list of the lock file:
+    ```bash
+    bundle lock --add-platform x86_64-linux
+    ```
+3.  Configure GitHub Pages:
+    *   Go to your repository on GitHub.
+    *   Select the _Settings_ tab, then click _Pages_ in the left navigation bar.
+    *   In the **Source** section (under _Build and deployment_), select **GitHub Actions** from the dropdown menu.
+4.  Push any commits to GitHub to trigger the _Actions_ workflow. The site will be deployed automatically after the _Build and Deploy_ workflow completes successfully.
+
+### Manual Build and Deployment
+
+For self-hosted servers:
+
+1.  Navigate to the root of your project.
+2.  Build your site:
+    ```bash
+    JEKYLL_ENV=production bundle exec jekyll b
+    ```
+3.  The generated site files will be in the `_site` folder. Upload these files to your target server.
+
+---
+For more detailed documentation, please refer to the [Chirpy theme documentation](https://chirpy.cotes.page/posts/getting-started/).
