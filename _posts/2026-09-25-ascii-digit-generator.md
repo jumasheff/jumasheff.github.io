@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ASCII сандарынын генератору"
-date:   2026-09-25 18:00:00 +0600
+date:   2026-09-25 13:29:00 +0600
 categories: Python Pyodide ASCII dataset
 author: murat
 toc: false
